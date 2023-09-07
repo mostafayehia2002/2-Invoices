@@ -1,12 +1,8 @@
 @extends('layouts.master2')
-
 @section('title')
     تسجيل الدخول
 @stop
-
-
 @section('css')
-
     <link  href="{{URL::asset('assets/plugins/sidemenu-responsive-tabs/css/sidemenu-responsive-tabs.css')}}" rel="stylesheet">
 @endsection
 @section('content')
