@@ -69,15 +69,28 @@
                                     <td>{{$product->section->section_name}}</td>
                                     <td>{{$product->description}}</td>
                                       <td>
-                                          <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
-                                             data-id="" data-section_name=""
-                                             data-description="" data-toggle="modal"
-                                             href="#EditModel" title="تعديل"><i class="las la-pen"></i></a>
+                                          <a class="modal-effect btn btn-sm btn-info"
+                                             data-effect="effect-scale"
+                                              data-id="{{$product->id}}"
+                                             data-product_name="{{$product->product_name}}"
+                                             data-description="{{$product->description}}"
+                                             data-section_name="{{$product->section->section_name}}"
+                                             data-section_id="{{$product->section->id}}"
+                                             data-toggle="modal"
+                                             href="#EditModel"
+                                             title="تعديل">
+                                              <i class="las la-pen"></i>
+                                          </a>
 
-                                          <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
-                                             data-id=" data-section_name="
-                                             data-toggle="modal" href="#DeleteModel" title="حذف"><i
-                                                  class="las la-trash"></i></a>
+                                          <a class="modal-effect btn btn-sm btn-danger"
+                                             data-effect="effect-scale"
+                                             data-id="{{$product->id}}"
+                                             data-product_name="{{$product->product_name}}"
+                                             data-toggle="modal"
+                                             href="#DeleteModel"
+                                             title="حذف">
+                                              <i class="las la-trash"></i>
+                                          </a>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -131,18 +144,23 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content modal-content-demo">
                     <div class="modal-header">
-                        <h6 class="modal-title">تعديل القسم</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                        <h6 class="modal-title">تعديل المنتج</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
                     </div>
-                    <form action="" method="POST">
+                    <form action="products/update" method="POST">
                         {{method_field('PUT')}}
                         @csrf
                         <div class="modal-body">
                             <div class="form-group">
                                 <input  type="hidden" id="cases_id" name="id" value="">
-
-                                <label for="section_name">اسم القسم</label>
-                                <input type="text" class="form-control" id="section_name" name="section_name" value="">
+                                <label for="product_name">اسم المنتج</label>
+                                <input type="text" class="form-control" id="product_name" name="product_name" value="">
                             </div>
+                            <label for="section_id">القسم</label>
+                                  <select  name="section_id" id="section_id" class="custom-select my-1 mr-sm-2">
+                                    @foreach($sections as $section)
+                                        <option value="{{$section->id}}">{{$section->section_name}}</option>
+                                    @endforeach
+                                   </select>
                             <div class="form-group">
                                 <label for="description">ملاحظات</label>
                                 <textarea class="form-control" id="description" name="description" value="">
@@ -169,7 +187,7 @@
                     <div class="modal-header">
                         <h6 class="modal-title">حذف القسم</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
                     </div>
-                    <form action="" method="post">
+                    <form action="products/destroy" method="post">
                         {{method_field('Delete')}}
                      @csrf
                         <div class="modal-body">
@@ -223,17 +241,18 @@
             },3000) ;
         });
     </script>
-
-
     <script>
         $('#EditModel').on('show.bs.modal', function(event) {
             let button = $(event.relatedTarget)
             let id = button.data('id')
-            let section_name = button.data('section_name')
+            let product_name = button.data('product_name')
             let description = button.data('description')
+            let section_name=button.data('section_name')
+            let section_id=button.data('section_id')
             let modal = $(this)
             modal.find('.modal-body #cases_id').val(id);
-            modal.find('.modal-body #section_name').val(section_name);
+            modal.find('.modal-body #product_name').val(product_name);
+            modal.find('.modal-body #section_name').val(section_id);
             modal.find('.modal-body #description').val(description);
         })
     </script>
@@ -242,10 +261,10 @@
         $("#DeleteModel").on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
-            var section_name = button.data('section_name')
+            var product_name = button.data('product_name')
             var modal = $(this)
             modal.find('.modal-body #id').val(id);
-            modal.find('.modal-body #section_name').val(section_name);
+            modal.find('.modal-body #section_name').val(product_name);
         })
 
     </script>
