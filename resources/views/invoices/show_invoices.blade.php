@@ -28,6 +28,11 @@
     <div class="row">
         <div class="col-xl-12">
             <div class="card">
+                <div class="card-header pb-0">
+                    <div class="d-flex justify-content-between">
+                     {{--                        --}}
+                    </div>
+                </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table text-md-nowrap" id="example1">

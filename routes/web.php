@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SectionController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -32,8 +33,7 @@ Route::middleware('admin')->group(function (){
     Route::controller(InvoiceController::class)->group(function (){
         Route::get('invoice','index')->name('invoice');
     });
-    Route::controller(SectionController::class)->group(function (){
-        Route::get('sections','index')->name('section');
-    });
+    Route::resource('sections',SectionController::class);
+    Route::resource('products',ProductController::class);
 });
 
