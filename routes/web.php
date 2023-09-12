@@ -30,9 +30,8 @@ Route::middleware('admin')->group(function (){
 
 //    Route::get('/{page}', [AdminController::class,'index']);
     //
-    Route::controller(InvoiceController::class)->group(function (){
-        Route::get('invoice','index')->name('invoice');
-    });
+
+    Route::resource('invoices',InvoiceController::class);
     Route::resource('sections',SectionController::class);
     Route::resource('products',ProductController::class);
 });

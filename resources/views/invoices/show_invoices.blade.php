@@ -30,6 +30,9 @@
             <div class="card">
                 <div class="card-header pb-0">
                     <div class="d-flex justify-content-between">
+                        <div>
+                            <a  href="{{url('invoices/create')}}" class="btn btn-outline-primary btn-block" data-effect="effect-scale" >اضافة فاتوره </a>
+                        </div>
                      {{--                        --}}
                     </div>
                 </div>
