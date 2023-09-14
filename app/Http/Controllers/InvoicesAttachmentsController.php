@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Invoice;
-use App\Models\Product;
-use App\Models\Section;
+use App\Models\invoices_attachments;
 use Illuminate\Http\Request;
 
-class InvoiceController extends Controller
+class InvoicesAttachmentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +13,6 @@ class InvoiceController extends Controller
     public function index()
     {
         //
-        return view('invoices.show_invoices');
     }
 
     /**
@@ -24,33 +21,20 @@ class InvoiceController extends Controller
     public function create()
     {
         //
-        $sections=Section::all();
-        return view('invoices.add_invoices',compact('sections'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-
-    public function  getProducts($id)
-    {
-        $products = Product::where('section_id', $id)->pluck('product_name', 'id');
-
-
-        return response()->json($products);
-
-    }
     public function store(Request $request)
     {
         //
-
-        return $request;
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Invoice $invoice)
+    public function show(invoices_attachments $invoices_attachments)
     {
         //
     }
@@ -58,7 +42,7 @@ class InvoiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Invoice $invoice)
+    public function edit(invoices_attachments $invoices_attachments)
     {
         //
     }
@@ -66,7 +50,7 @@ class InvoiceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Invoice $invoice)
+    public function update(Request $request, invoices_attachments $invoices_attachments)
     {
         //
     }
@@ -74,7 +58,7 @@ class InvoiceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Invoice $invoice)
+    public function destroy(invoices_attachments $invoices_attachments)
     {
         //
     }
