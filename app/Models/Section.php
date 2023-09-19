@@ -15,4 +15,9 @@ class Section extends Model
 
         return $this->hasMany(Product::class,'section_id');
     }
+
+    public function invoices():hasMany{
+
+        return $this->hasMany(Invoice::class,'section_id');
+    }
 }

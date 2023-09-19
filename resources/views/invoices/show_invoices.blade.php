@@ -24,6 +24,15 @@
     <!-- breadcrumb -->
 @endsection
 @section('content')
+    @if(session('success-add-invoice'))
+        <div class="alert alert-success">{{ session()->get('success-add-invoice') }}</div>
+    @endif
+    @if(session('success-update-invoice'))
+        <div class="alert alert-success">{{ session()->get('success-update-invoice') }}</div>
+    @endif
+    @if(session('success-delete-invoice'))
+        <div class="alert alert-success">{{ session()->get('success-delete-invoice') }}</div>
+    @endif
     <!-- row -->
     <div class="row">
         <div class="col-xl-12">
@@ -38,38 +47,51 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table text-md-nowrap" id="example1">
+                        <table class="table center-aligned-table mb-0 table table-hover" id="example1">
                             <thead>
                             <tr>
-                                <th class="wd-15p border-bottom-0">#</th>
-                                <th class="wd-15p border-bottom-0">رقم الفاتورة</th>
-                                <th class="wd-20p border-bottom-0">تاريخ الفاتورة</th>
-                                <th class="wd-15p border-bottom-0">تاريخ الاستحقاق</th>
-                                <th class="wd-10p border-bottom-0">المنتج</th>
-                                <th class="wd-25p border-bottom-0">القسم</th>
-                                <th class="wd-25p border-bottom-0">الخصم</th>
-                                <th class="wd-25p border-bottom-0">نسبه الضريبة</th>
-                                <th class="wd-25p border-bottom-0">قيمه الضريبة</th>
-                                <th class="wd-25p border-bottom-0">الاجمالي</th>
-                                <th class="wd-25p border-bottom-0">الحاله</th>
-                                <th class="wd-25p border-bottom-0">ملاحظات</th>
+                                <th scope="col">#</th>
+                                <th scope="col">رقم الفاتورة</th>
+                                <th scope="col">تاريخ الفاتورة</th>
+                                <th scope="col">تاريخ الاستحقاق</th>
+                                <th scope="col">المنتج</th>
+                                <th scope="col">القسم</th>
+                                <th scope="col">الاجمالي</th>
+                                <th scope="col">الحاله</th>
+                                <th scope="col">العمليات</th>
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($invoices as $invoice)
+
                             <tr>
-                                <td>1</td>
-                                <td>12345</td>
-                                <td>22-5-2020</td>
-                                <td>22-5-2023</td>
-                                <td>cc</td>
-                                <td>البنك الاهلي</td>
-                                <td>200</td>
-                                <td>10%</td>
-                                <td>800</td>
-                                <td>1,000</td>
-                                <td>مدفوعه</td>
-                                <td>تم دفع نصفها سابقا</td>
+                                <td>{{$loop->index+1}}</td>
+                                <td>  <a href="{{route('invoiceDetails.edit',$invoice->id)}}"> {{$invoice->invoice_number}}</a></td>
+                                <td>{{$invoice->invoice_date}}</td>
+                                <td>{{$invoice->due_date}}</td>
+                                <td>{{$invoice->product}}</td>
+                                <td>{{$invoice->section->section_name}}</td>
+                                <td>{{$invoice->total}}</td>
+                                <td>
+                                    @if($invoice->value_status==0)
+                                        <span class="text-danger">{{$invoice->status}}</span>
+                                    @elseif($invoice->value_status==1)
+                                        <span class="text-success">{{$invoice->status}}</span>
+                                    @else
+                                        <span class="text-warning">{{$invoice->status}}</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button aria-expanded="false" aria-haspopup="true" class="btn ripple btn-warning" data-toggle="dropdown" type="button">العمليات<i class="fas fa-caret-down mr-1"></i></button>
+                                        <div class="dropdown-menu tx-13">
+                                            <a class="dropdown-item" href="{{route('invoices.edit',$invoice->id)}}">تعديل الفاتورة</a>
+                                            <a class="dropdown-item active" href="{{route('deleteInvoice',[$invoice->id,$invoice->invoice_number])}}" onclick="return confirm('هل انت متاكد من حذف الفاتورة')">حذف الفاتورة</a>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -85,6 +107,14 @@
     <!-- main-content closed -->
 @endsection
 @section('js')
+    <script>
+        let alert=document.querySelectorAll('.alert');
+        alert.forEach((e)=>{
+            setTimeout(function (){
+                e.style.display='none';
+            },3000) ;
+        });
+    </script>
     <!-- Internal Data tables -->
     <script src="{{URL::asset('assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{URL::asset('assets/plugins/datatable/js/dataTables.dataTables.min.js')}}"></script>

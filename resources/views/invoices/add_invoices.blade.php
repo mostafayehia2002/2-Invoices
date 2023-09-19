@@ -29,7 +29,12 @@
 @endsection
 @section('content')
 
+    @if($errors->any())
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-danger">{{ $error }}</div>
 
+        @endforeach
+    @endif
 
     <!-- row -->
     <div class="row">
@@ -40,24 +45,23 @@
                         autocomplete="off">
                         {{ csrf_field() }}
                         {{-- 1 --}}
-
                         <div class="row">
                             <div class="col">
-                                <label for="inputName" class="control-label">رقم الفاتورة</label>
-                                <input type="text" class="form-control" id="inputName" name="Invoice_number"
-                                    title="يرجي ادخال رقم الفاتورة" required>
+                                <label for="Invoice_number" class="control-label">رقم الفاتورة</label>
+                                <input type="text" class="form-control" id="Invoice_number" name="Invoice_number"
+                                    title="يرجي ادخال رقم الفاتورة" value="{{old('Invoice_number')}}">
                             </div>
 
                             <div class="col">
                                 <label>تاريخ الفاتورة</label>
                                 <input class="form-control fc-datepicker" name="Invoice_Date" placeholder="YYYY-MM-DD"
-                                    type="text" value="{{ date('Y-m-d') }}" required>
+                                    type="text" value="{{ date('Y-m-d') }}">
                             </div>
 
                             <div class="col">
                                 <label>تاريخ الاستحقاق</label>
                                 <input class="form-control fc-datepicker" name="Due_date" placeholder="YYYY-MM-DD"
-                                    type="text" required>
+                                    type="text" value="{{old('Due_date')}}">
                             </div>
 
                         </div>
@@ -70,7 +74,7 @@
                                     <!--placeholder-->
                                     <option value="" selected disabled>حدد القسم</option>
                                     @foreach ($sections as $section)
-                                        <option value="{{ $section->id }}">{{ $section->section_name }}</option>
+                                        <option value="{{ $section->id }}" {{ old('Section') == $section->id ? 'selected' : '' }}>{{ $section->section_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -80,10 +84,9 @@
 
                                 </select>
                             </div>
-
                             <div class="col">
                                 <label for="Amount_Collection" class="control-label">مبلغ التحصيل</label>
-                                <input type="text" class="form-control" id="Amount_Collection" name="Amount_collection">
+                                <input type="text" class="form-control" id="Amount_Collection" name="Amount_collection" value="{{old('Amount_collection')}}">
                             </div>
                         </div>
 
@@ -94,25 +97,25 @@
                             <div class="col">
                                 <label for="Amount_Commission" class="control-label">مبلغ العمولة</label>
                                 <input type="text" class="form-control form-control-lg" id="Amount_Commission"
-                                    name="Amount_Commission" title="يرجي ادخال مبلغ العمولة ">
+                                    name="Amount_Commission" title="يرجي ادخال مبلغ العمولة " value="{{old('Amount_Commission')}}">
                             </div>
 
                             <div class="col">
                                 <label for="Discount" class="control-label">الخصم</label>
                                 <input type="text" class="form-control form-control-lg" id="Discount" name="Discount"
-                                    title="يرجي ادخال مبلغ الخصم " value=0 >
+                                    title="يرجي ادخال مبلغ الخصم " value="{{old('Discount')? old('Discount'):0}}" >
 
                             </div>
 
                             <div class="col">
                                 <label for="Rate_VAT" class="control-label">نسبة ضريبة القيمة المضافة</label>
-                                <select name="Rate_VAT" id="Rate_VAT" class="form-control" onchange="myFunction()">
+                                <select name="Rate_VAT" id="Rate_VAT" class="form-control" onchange="myFunction()" value="{{old('Rate_VAT')}}">
                                     <!--placeholder-->
                                     <option value="" selected disabled>حدد نسبة الضريبة</option>
-                                    <option value=" 5%">5%</option>
-                                    <option value="10%">10%</option>
-                                    <option value="15%">5%</option>
-                                    <option value="20%">10%</option>
+                                    <option value="5" {{ old('Rate_VAT') ==5? 'selected' : '' }}>5%</option>
+                                    <option value="10" {{ old('Rate_VAT') ==10? 'selected' : '' }}>10%</option>
+                                    <option value="15" {{ old('Rate_VAT') ==15? 'selected' : '' }}>15%</option>
+                                    <option value="20" {{ old('Rate_VAT') ==20? 'selected' : '' }}>20%</option>
                                 </select>
                             </div>
 
@@ -123,12 +126,12 @@
                         <div class="row">
                             <div class="col">
                                 <label for="Value_VAT" class="control-label">قيمة ضريبة القيمة المضافة</label>
-                                <input type="text" class="form-control" id="Value_VAT" name="Value_VAT" readonly>
+                                <input type="text" class="form-control" id="Value_VAT" name="Value_VAT" readonly value="{{old('Value_VAT')}}">
                             </div>
 
                             <div class="col">
                                 <label for="Total" class="control-label">الاجمالي شامل الضريبة</label>
-                                <input type="text" class="form-control" id="Total" name="Total" readonly>
+                                <input type="text" class="form-control" id="Total" name="Total" readonly value="{{old('Value_VAT')}}">
                             </div>
                         </div>
 
@@ -136,7 +139,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="Note">ملاحظات</label>
-                                <textarea class="form-control" id="Note" name="Note" rows="3"></textarea>
+                                <textarea class="form-control" id="Note" name="Note" rows="3" value="{{old('Note')}}"></textarea>
                             </div>
                         </div><br>
 
@@ -168,6 +171,14 @@
     <!-- main-content closed -->
 @endsection
 @section('js')
+    <script>
+        let alert=document.querySelectorAll('.alert');
+        alert.forEach((e)=>{
+            setTimeout(function (){
+                e.style.display='none';
+            },5000) ;
+        });
+    </script>
     <!-- Internal Select2 js-->
     <script src="{{ URL::asset('assets/plugins/select2/js/select2.min.js') }}"></script>
     <!--Internal Fileuploads js-->
@@ -215,11 +226,12 @@
                        success: function(data) {
                            $('select[name="Product"]').empty();
                            $.each(data, function(key, value) {
+
+
                                $('select[name="Product"]').append('<option value="' +
-                                   key + '">' + value + '</option>');
+                                   value + ' " >' + value + '</option>');
                            });
                        },
-
 
 
                     });

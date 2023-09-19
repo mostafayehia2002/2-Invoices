@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('file_name',999);
             $table->string('invoice_number',50);
-            $table->string('created_by');
             $table->foreignId('invoice_id')->constrained('invoices')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->string('created_by');
             $table->timestamps();
         });
     }

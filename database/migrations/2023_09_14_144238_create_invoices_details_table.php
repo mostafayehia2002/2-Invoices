@@ -13,21 +13,18 @@ return new class extends Migration
     {
         Schema::create('invoices_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_invoice')->constrained('invoices')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('invoice_id')->constrained('invoices')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('invoice_number',50);
             $table->string('product',50);
             $table->string('section',50);
-            $table->string('status',50);
-            $table->boolean('value_status');
+            $table->string('status',50)->default('غير مدفوعه');
+            $table->boolean('value_status')->default('0');
             $table->text('note')->nullable();
-            $table->string('user',255);
+            $table->string('created_by',255);
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('invoices_details');

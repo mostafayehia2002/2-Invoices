@@ -26,11 +26,9 @@ class SectionController extends Controller
     {
         $request->validate([
             'section_name'=>['required','unique:sections,section_name'],
-            'description'=>['required'],
           ],[
             'section_name.required'=>'هذا الحقل مطلوب',
             'section_name.unique'=>'هذاالقسم موجود مسبقا',
-            'description.required'=>'هذا الحقل مطلوب',
         ]);
         Section::create([
             'section_name'=>$request->section_name,
@@ -58,11 +56,11 @@ class SectionController extends Controller
         $id=$request->id;
         $request->validate([
             'section_name'=>['required','max:255','unique:sections,section_name,'.$id],
-            'description'=>['required'],
+
         ],[
             'section_name.required'=>'هذا الحقل مطلوب',
             'section_name.unique'=>'هذاالقسم موجود مسبقا',
-            'description.required'=>'هذا الحقل مطلوب',
+
         ]);
       $section=Section::findOrFail($id);
         $section->update([
