@@ -25,7 +25,7 @@ datepicker.regional.eo = {
 	dayNamesShort: [ "Dim","Lun","Mar","Mer","Ĵaŭ","Ven","Sab" ],
 	dayNamesMin: [ "Di","Lu","Ma","Me","Ĵa","Ve","Sa" ],
 	weekHeader: "Sb",
-	dateFormat: "dd/mm/yy",
+	dateFormat: "cc/cc/yy",
 	firstDay: 0,
 	isRTL: false,
 	showMonthAfterYear: false,

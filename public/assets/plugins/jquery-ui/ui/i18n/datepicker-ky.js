@@ -25,7 +25,7 @@ datepicker.regional.ky = {
 	dayNamesShort: [ "жек", "дүй", "шей", "шар", "бей", "жум", "ише" ],
 	dayNamesMin: [ "Жк","Дш","Шш","Шр","Бш","Жм","Иш" ],
 	weekHeader: "Жум",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

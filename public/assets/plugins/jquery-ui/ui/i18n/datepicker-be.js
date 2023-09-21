@@ -25,7 +25,7 @@ datepicker.regional.be = {
 	dayNamesShort: [ "ндз","пнд","аўт","срд","чцв","птн","сбт" ],
 	dayNamesMin: [ "Нд","Пн","Аў","Ср","Чц","Пт","Сб" ],
 	weekHeader: "Тд",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

@@ -39,7 +39,8 @@ Route::middleware('admin')->group(function (){
     Route::Post('delete_attachment',[InvoicesDetailsController::class,'deleteFile'])->name('deleteFile');
     Route::get('download/{invoice_number}/{file_name}',[InvoicesDetailsController::class,'download'])->name('download_file');
     Route::get('section/{id}',[InvoiceController::class,'getProducts']);
-    Route::get('delete/{id}/{invoice_number}',[InvoiceController::class,'delete'])->name('deleteInvoice');
+    Route::Post('archive',[InvoiceController::class,'archive'])->name('archiveInvoice');
+    Route::Post('delete',[InvoiceController::class,'delete'])->name('deleteInvoice');
 
 });
 

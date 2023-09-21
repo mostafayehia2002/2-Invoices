@@ -25,7 +25,7 @@ datepicker.regional.vi = {
 	dayNamesShort: [ "CN", "T2", "T3", "T4", "T5", "T6", "T7" ],
 	dayNamesMin: [ "CN", "T2", "T3", "T4", "T5", "T6", "T7" ],
 	weekHeader: "Tu",
-	dateFormat: "dd/mm/yy",
+	dateFormat: "cc/cc/yy",
 	firstDay: 0,
 	isRTL: false,
 	showMonthAfterYear: false,

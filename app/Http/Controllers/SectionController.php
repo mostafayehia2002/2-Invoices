@@ -17,11 +17,6 @@ class SectionController extends Controller
       $sections=  Section::all();
         return view('sections.show_sections',compact('sections'));
     }
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
         $request->validate([
@@ -42,15 +37,6 @@ class SectionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function show(Section $section)
-    {
-
-    }
-
-    public function edit(Section $section)
-    {
-        //
-    }
     public function update(Request $request)
     {
         $id=$request->id;

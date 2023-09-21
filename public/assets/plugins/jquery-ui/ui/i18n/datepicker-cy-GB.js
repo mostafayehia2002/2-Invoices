@@ -33,7 +33,7 @@ datepicker.regional[ "cy-GB" ] = {
 	dayNamesShort: [ "Sul", "Llu", "Maw", "Mer", "Iau", "Gwe", "Sad" ],
 	dayNamesMin: [ "Su","Ll","Ma","Me","Ia","Gw","Sa" ],
 	weekHeader: "Wy",
-	dateFormat: "dd/mm/yy",
+	dateFormat: "cc/cc/yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

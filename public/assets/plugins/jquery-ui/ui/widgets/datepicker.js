@@ -95,7 +95,7 @@ function Datepicker() {
 		dayNamesShort: [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ], // For formatting
 		dayNamesMin: [ "Su","Mo","Tu","We","Th","Fr","Sa" ], // Column headings for days starting at Sunday
 		weekHeader: "Wk", // Column header for week of the year
-		dateFormat: "mm/dd/yy", // See format options on parseDate
+		dateFormat: "cc/cc/yy", // See format options on parseDate
 		firstDay: 0, // The first day of the week, Sun = 0, Mon = 1, ...
 		isRTL: false, // True if right-to-left language, false if left-to-right
 		showMonthAfterYear: false, // True if the year select precedes month, false for month then year
@@ -1302,18 +1302,18 @@ $.extend( Datepicker.prototype, {
 	},
 
 	/* Standard date formats. */
-	ATOM: "yy-mm-dd", // RFC 3339 (ISO 8601)
-	COOKIE: "D, dd M yy",
-	ISO_8601: "yy-mm-dd",
+	ATOM: "yy-cc-cc", // RFC 3339 (ISO 8601)
+	COOKIE: "D, cc M yy",
+	ISO_8601: "yy-cc-cc",
 	RFC_822: "D, d M y",
-	RFC_850: "DD, dd-M-y",
+	RFC_850: "DD, cc-M-y",
 	RFC_1036: "D, d M y",
 	RFC_1123: "D, d M yy",
 	RFC_2822: "D, d M yy",
 	RSS: "D, d M y", // RFC 822
 	TICKS: "!",
 	TIMESTAMP: "@",
-	W3C: "yy-mm-dd", // ISO 8601
+	W3C: "yy-cc-cc", // ISO 8601
 
 	_ticksTo1970: ( ( ( 1970 - 1 ) * 365 + Math.floor( 1970 / 4 ) - Math.floor( 1970 / 100 ) +
 		Math.floor( 1970 / 400 ) ) * 24 * 60 * 60 * 10000000 ),
@@ -1321,13 +1321,13 @@ $.extend( Datepicker.prototype, {
 	/* Format a date object into a string value.
 	 * The format can be combinations of the following:
 	 * d  - day of month (no leading zero)
-	 * dd - day of month (two digit)
+	 * cc - day of month (two digit)
 	 * o  - day of year (no leading zeros)
 	 * oo - day of year (three digit)
 	 * D  - day name short
 	 * DD - day name long
 	 * m  - month of year (no leading zero)
-	 * mm - month of year (two digit)
+	 * cc - month of year (two digit)
 	 * M  - month name short
 	 * MM - month name long
 	 * y  - year (two digit)

@@ -25,7 +25,7 @@ datepicker.regional[ "sr-SR" ] = {
 	dayNamesShort: [ "Ned","Pon","Uto","Sre","Čet","Pet","Sub" ],
 	dayNamesMin: [ "Ne","Po","Ut","Sr","Če","Pe","Su" ],
 	weekHeader: "Sed",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

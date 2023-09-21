@@ -19,12 +19,12 @@
         weekdaysShort: 'Ta_Ma_Tū_We_Tāi_Pa_Hā'.split('_'),
         weekdaysMin: 'Ta_Ma_Tū_We_Tāi_Pa_Hā'.split('_'),
         longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
+            LT: 'HH:cc',
+            LTS: 'HH:cc:ss',
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
-            LLL: 'D MMMM YYYY [i] HH:mm',
-            LLLL: 'dddd, D MMMM YYYY [i] HH:mm'
+            LLL: 'D MMMM YYYY [i] HH:cc',
+            LLLL: 'dddd, D MMMM YYYY [i] HH:cc'
         },
         calendar: {
             sameDay: '[i teie mahana, i] LT',

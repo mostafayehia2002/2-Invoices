@@ -41,12 +41,12 @@
         weekdaysShort : 'ಭಾನು_ಸೋಮ_ಮಂಗಳ_ಬುಧ_ಗುರು_ಶುಕ್ರ_ಶನಿ'.split('_'),
         weekdaysMin : 'ಭಾ_ಸೋ_ಮಂ_ಬು_ಗು_ಶು_ಶ'.split('_'),
         longDateFormat : {
-            LT : 'A h:mm',
-            LTS : 'A h:mm:ss',
+            LT : 'A h:cc',
+            LTS : 'A h:cc:ss',
             L : 'DD/MM/YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY, A h:mm',
-            LLLL : 'dddd, D MMMM YYYY, A h:mm'
+            LLL : 'D MMMM YYYY, A h:cc',
+            LLLL : 'dddd, D MMMM YYYY, A h:cc'
         },
         calendar : {
             sameDay : '[ಇಂದು] LT',

@@ -25,7 +25,7 @@ datepicker.regional.ru = {
 	dayNamesShort: [ "вск","пнд","втр","срд","чтв","птн","сбт" ],
 	dayNamesMin: [ "Вс","Пн","Вт","Ср","Чт","Пт","Сб" ],
 	weekHeader: "Нед",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

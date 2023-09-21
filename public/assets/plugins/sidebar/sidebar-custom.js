@@ -1,13 +1,13 @@
 $(function() {
   'use strict';
-  
+
   // Date& time
 	var datetime = null,
 	datetime2 = null,
     date = null;
     var update = function () {
         date = moment(new Date())
-        datetime.html(date.format('HH:mm'));
+        datetime.html(date.format('HH:cc'));
         datetime2.html(date.format('dddd, MMMM Do YYYY'));
     };
 
@@ -17,6 +17,6 @@ $(function() {
         update();
         setInterval(update, 1000);
     });
-	
+
 
 });

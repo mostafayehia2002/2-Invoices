@@ -26,7 +26,7 @@ datepicker.regional.bg = {
 	dayNamesShort: [ "Нед","Пон","Вто","Сря","Чет","Пет","Съб" ],
 	dayNamesMin: [ "Не","По","Вт","Ср","Че","Пе","Съ" ],
 	weekHeader: "Wk",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

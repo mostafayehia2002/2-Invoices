@@ -61,7 +61,7 @@ datepicker.regional.fa = {
 		"ش"
 	],
 	weekHeader: "هف",
-	dateFormat: "yy/mm/dd",
+	dateFormat: "yy/cc/cc",
 	firstDay: 6,
 	isRTL: true,
 	showMonthAfterYear: false,

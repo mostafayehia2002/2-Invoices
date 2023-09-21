@@ -72,7 +72,7 @@ var DEFAULTS = {
   // The initial date. If not present, use the current date.
   date: null,
   // The date string format, also as the sorting order for columns.
-  format: 'YYYY-MM-DD HH:mm',
+  format: 'YYYY-MM-DD HH:cc',
   // Indicate whether show the column headers.
   headers: false,
   // Define the increment for each date / time part.

@@ -25,7 +25,7 @@ datepicker.regional.ca = {
 	dayNamesShort: [ "dg","dl","dt","dc","dj","dv","ds" ],
 	dayNamesMin: [ "dg","dl","dt","dc","dj","dv","ds" ],
 	weekHeader: "Set",
-	dateFormat: "dd/mm/yy",
+	dateFormat: "cc/cc/yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

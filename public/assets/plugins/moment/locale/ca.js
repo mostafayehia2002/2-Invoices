@@ -21,15 +21,15 @@
         weekdaysMin : 'dg_dl_dt_dc_dj_dv_ds'.split('_'),
         weekdaysParseExact : true,
         longDateFormat : {
-            LT : 'H:mm',
-            LTS : 'H:mm:ss',
+            LT : 'H:cc',
+            LTS : 'H:cc:ss',
             L : 'DD/MM/YYYY',
             LL : 'D MMMM [de] YYYY',
             ll : 'D MMM YYYY',
-            LLL : 'D MMMM [de] YYYY [a les] H:mm',
-            lll : 'D MMM YYYY, H:mm',
-            LLLL : 'dddd D MMMM [de] YYYY [a les] H:mm',
-            llll : 'ddd D MMM YYYY, H:mm'
+            LLL : 'D MMMM [de] YYYY [a les] H:cc',
+            lll : 'D MMM YYYY, H:cc',
+            LLLL : 'dddd D MMMM [de] YYYY [a les] H:cc',
+            llll : 'ddd D MMM YYYY, H:cc'
         },
         calendar : {
             sameDay : function () {

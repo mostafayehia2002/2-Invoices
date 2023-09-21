@@ -38,12 +38,12 @@
         weekdaysShort : 'жек_дүй_сей_сәр_бей_жұм_сен'.split('_'),
         weekdaysMin : 'жк_дй_сй_ср_бй_жм_сн'.split('_'),
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'DD.MM.YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY HH:mm',
-            LLLL : 'dddd, D MMMM YYYY HH:mm'
+            LLL : 'D MMMM YYYY HH:cc',
+            LLLL : 'dddd, D MMMM YYYY HH:cc'
         },
         calendar : {
             sameDay : '[Бүгін сағат] LT',

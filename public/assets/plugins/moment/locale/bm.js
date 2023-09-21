@@ -15,12 +15,12 @@
         weekdaysShort : 'Kar_Ntɛ_Tar_Ara_Ala_Jum_Sib'.split('_'),
         weekdaysMin : 'Ka_Nt_Ta_Ar_Al_Ju_Si'.split('_'),
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'DD/MM/YYYY',
             LL : 'MMMM [tile] D [san] YYYY',
-            LLL : 'MMMM [tile] D [san] YYYY [lɛrɛ] HH:mm',
-            LLLL : 'dddd MMMM [tile] D [san] YYYY [lɛrɛ] HH:mm'
+            LLL : 'MMMM [tile] D [san] YYYY [lɛrɛ] HH:cc',
+            LLLL : 'dddd MMMM [tile] D [san] YYYY [lɛrɛ] HH:cc'
         },
         calendar : {
             sameDay : '[Bi lɛrɛ] LT',

@@ -28,12 +28,12 @@
         weekdaysShort : weekdaysShort,
         weekdaysMin : weekdaysMin,
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'DD/MM/YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY HH:mm',
-            LLLL : 'dddd, D MMMM YYYY HH:mm'
+            LLL : 'D MMMM YYYY HH:cc',
+            LLLL : 'dddd, D MMMM YYYY HH:cc'
         },
         calendar : {
             sameDay : '[An-diugh aig] LT',

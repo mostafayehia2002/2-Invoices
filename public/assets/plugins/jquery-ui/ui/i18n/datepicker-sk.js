@@ -25,7 +25,7 @@ datepicker.regional.sk = {
 	dayNamesShort: [ "Ned","Pon","Uto","Str","Štv","Pia","Sob" ],
 	dayNamesMin: [ "Ne","Po","Ut","St","Št","Pia","So" ],
 	weekHeader: "Ty",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

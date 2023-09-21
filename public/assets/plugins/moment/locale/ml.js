@@ -16,12 +16,12 @@
         weekdaysShort : 'ഞായർ_തിങ്കൾ_ചൊവ്വ_ബുധൻ_വ്യാഴം_വെള്ളി_ശനി'.split('_'),
         weekdaysMin : 'ഞാ_തി_ചൊ_ബു_വ്യാ_വെ_ശ'.split('_'),
         longDateFormat : {
-            LT : 'A h:mm -നു',
-            LTS : 'A h:mm:ss -നു',
+            LT : 'A h:cc -നു',
+            LTS : 'A h:cc:ss -നു',
             L : 'DD/MM/YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY, A h:mm -നു',
-            LLLL : 'dddd, D MMMM YYYY, A h:mm -നു'
+            LLL : 'D MMMM YYYY, A h:cc -നു',
+            LLLL : 'dddd, D MMMM YYYY, A h:cc -നു'
         },
         calendar : {
             sameDay : '[ഇന്ന്] LT',

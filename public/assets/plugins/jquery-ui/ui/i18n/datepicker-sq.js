@@ -25,7 +25,7 @@ datepicker.regional.sq = {
 	dayNamesShort: [ "Di","Hë","Ma","Më","En","Pr","Sh" ],
 	dayNamesMin: [ "Di","Hë","Ma","Më","En","Pr","Sh" ],
 	weekHeader: "Ja",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

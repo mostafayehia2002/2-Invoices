@@ -15,12 +15,12 @@
         weekdaysShort : 'Ahd_Isn_Sel_Rab_Kha_Jum_Sab'.split('_'),
         weekdaysMin : 'Ah_Is_Sl_Rb_Km_Jm_Sb'.split('_'),
         longDateFormat : {
-            LT : 'HH.mm',
-            LTS : 'HH.mm.ss',
+            LT : 'HH.cc',
+            LTS : 'HH.cc.ss',
             L : 'DD/MM/YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY [pukul] HH.mm',
-            LLLL : 'dddd, D MMMM YYYY [pukul] HH.mm'
+            LLL : 'D MMMM YYYY [pukul] HH.cc',
+            LLLL : 'dddd, D MMMM YYYY [pukul] HH.cc'
         },
         meridiemParse: /pagi|tengahari|petang|malam/,
         meridiemHour: function (hour, meridiem) {

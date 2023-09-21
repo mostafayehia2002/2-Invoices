@@ -25,7 +25,7 @@ datepicker.regional.tj = {
 	dayNamesShort: [ "якш","душ","сеш","чор","пан","ҷум","шан" ],
 	dayNamesMin: [ "Як","Дш","Сш","Чш","Пш","Ҷм","Шн" ],
 	weekHeader: "Хф",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

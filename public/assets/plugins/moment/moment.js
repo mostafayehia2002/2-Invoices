@@ -425,12 +425,12 @@
     }
 
     var defaultLongDateFormat = {
-        LTS  : 'h:mm:ss A',
-        LT   : 'h:mm A',
+        LTS  : 'h:cc:ss A',
+        LT   : 'h:cc A',
         L    : 'MM/DD/YYYY',
         LL   : 'MMMM D, YYYY',
-        LLL  : 'MMMM D, YYYY h:mm A',
-        LLLL : 'dddd, MMMM D, YYYY h:mm A'
+        LLL  : 'MMMM D, YYYY h:cc A',
+        LLLL : 'dddd, MMMM D, YYYY h:cc A'
     };
 
     function longDateFormat (key) {
@@ -2180,10 +2180,10 @@
 
     // iso time formats and regexes
     var isoTimes = [
-        ['HH:mm:ss.SSSS', /\d\d:\d\d:\d\d\.\d+/],
-        ['HH:mm:ss,SSSS', /\d\d:\d\d:\d\d,\d+/],
-        ['HH:mm:ss', /\d\d:\d\d:\d\d/],
-        ['HH:mm', /\d\d:\d\d/],
+        ['HH:cc:ss.SSSS', /\d\d:\d\d:\d\d\.\d+/],
+        ['HH:cc:ss,SSSS', /\d\d:\d\d:\d\d,\d+/],
+        ['HH:cc:ss', /\d\d:\d\d:\d\d/],
+        ['HH:cc', /\d\d:\d\d/],
         ['HHmmss.SSSS', /\d\d\d\d\d\d\.\d+/],
         ['HHmmss,SSSS', /\d\d\d\d\d\d,\d+/],
         ['HHmmss', /\d\d\d\d\d\d/],
@@ -3295,11 +3295,11 @@
         return -(wholeMonthDiff + adjust) || 0;
     }
 
-    hooks.defaultFormat = 'YYYY-MM-DDTHH:mm:ssZ';
-    hooks.defaultFormatUtc = 'YYYY-MM-DDTHH:mm:ss[Z]';
+    hooks.defaultFormat = 'YYYY-MM-DDTHH:cc:ssZ';
+    hooks.defaultFormatUtc = 'YYYY-MM-DDTHH:cc:ss[Z]';
 
     function toString () {
-        return this.clone().locale('en').format('ddd MMM DD YYYY HH:mm:ss [GMT]ZZ');
+        return this.clone().locale('en').format('ddd MMM DD YYYY HH:cc:ss [GMT]ZZ');
     }
 
     function toISOString(keepOffset) {
@@ -3309,7 +3309,7 @@
         var utc = keepOffset !== true;
         var m = utc ? this.clone().utc() : this;
         if (m.year() < 0 || m.year() > 9999) {
-            return formatMoment(m, utc ? 'YYYYYY-MM-DD[T]HH:mm:ss.SSS[Z]' : 'YYYYYY-MM-DD[T]HH:mm:ss.SSSZ');
+            return formatMoment(m, utc ? 'YYYYYY-MM-DD[T]HH:cc:ss.SSS[Z]' : 'YYYYYY-MM-DD[T]HH:cc:ss.SSSZ');
         }
         if (isFunction(Date.prototype.toISOString)) {
             // native implementation is ~50x faster, use it when we can
@@ -3319,7 +3319,7 @@
                 return new Date(this.valueOf() + this.utcOffset() * 60 * 1000).toISOString().replace('Z', formatMoment(m, 'Z'));
             }
         }
-        return formatMoment(m, utc ? 'YYYY-MM-DD[T]HH:mm:ss.SSS[Z]' : 'YYYY-MM-DD[T]HH:mm:ss.SSSZ');
+        return formatMoment(m, utc ? 'YYYY-MM-DD[T]HH:cc:ss.SSS[Z]' : 'YYYY-MM-DD[T]HH:cc:ss.SSSZ');
     }
 
     /**
@@ -3340,7 +3340,7 @@
         }
         var prefix = '[' + func + '("]';
         var year = (0 <= this.year() && this.year() <= 9999) ? 'YYYY' : 'YYYYYY';
-        var datetime = '-MM-DD[T]HH:mm:ss.SSS';
+        var datetime = '-MM-DD[T]HH:cc:ss.SSS';
         var suffix = zone + '[")]';
 
         return this.format(prefix + year + datetime + suffix);
@@ -4490,13 +4490,13 @@
 
     // currently HTML5 input type only supports 24-hour formats
     hooks.HTML5_FMT = {
-        DATETIME_LOCAL: 'YYYY-MM-DDTHH:mm',             // <input type="datetime-local" />
-        DATETIME_LOCAL_SECONDS: 'YYYY-MM-DDTHH:mm:ss',  // <input type="datetime-local" step="1" />
-        DATETIME_LOCAL_MS: 'YYYY-MM-DDTHH:mm:ss.SSS',   // <input type="datetime-local" step="0.001" />
+        DATETIME_LOCAL: 'YYYY-MM-DDTHH:cc',             // <input type="datetime-local" />
+        DATETIME_LOCAL_SECONDS: 'YYYY-MM-DDTHH:cc:ss',  // <input type="datetime-local" step="1" />
+        DATETIME_LOCAL_MS: 'YYYY-MM-DDTHH:cc:ss.SSS',   // <input type="datetime-local" step="0.001" />
         DATE: 'YYYY-MM-DD',                             // <input type="date" />
-        TIME: 'HH:mm',                                  // <input type="time" />
-        TIME_SECONDS: 'HH:mm:ss',                       // <input type="time" step="1" />
-        TIME_MS: 'HH:mm:ss.SSS',                        // <input type="time" step="0.001" />
+        TIME: 'HH:cc',                                  // <input type="time" />
+        TIME_SECONDS: 'HH:cc:ss',                       // <input type="time" step="1" />
+        TIME_MS: 'HH:cc:ss.SSS',                        // <input type="time" step="0.001" />
         WEEK: 'YYYY-[W]WW',                             // <input type="week" />
         MONTH: 'YYYY-MM'                                // <input type="month" />
     };

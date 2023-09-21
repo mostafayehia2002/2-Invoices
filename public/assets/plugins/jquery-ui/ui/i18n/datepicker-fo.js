@@ -33,7 +33,7 @@ datepicker.regional.fo = {
 	dayNamesShort: [ "Sun","Mán","Týs","Mik","Hós","Frí","Ley" ],
 	dayNamesMin: [ "Su","Má","Tý","Mi","Hó","Fr","Le" ],
 	weekHeader: "Vk",
-	dateFormat: "dd-mm-yy",
+	dateFormat: "cc-cc-yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

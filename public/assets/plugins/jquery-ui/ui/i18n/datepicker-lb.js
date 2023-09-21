@@ -33,7 +33,7 @@ datepicker.regional.lb = {
 	dayNamesShort: [ "Son", "Méi", "Dën", "Mët", "Don", "Fre", "Sam" ],
 	dayNamesMin: [ "So","Mé","Dë","Më","Do","Fr","Sa" ],
 	weekHeader: "W",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

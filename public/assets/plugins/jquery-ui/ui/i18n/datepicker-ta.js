@@ -41,7 +41,7 @@ datepicker.regional.ta = {
 	],
 	dayNamesMin: [ "ஞா","தி","செ","பு","வி","வெ","ச" ],
 	weekHeader: "Не",
-	dateFormat: "dd/mm/yy",
+	dateFormat: "cc/cc/yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

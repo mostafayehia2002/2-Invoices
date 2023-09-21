@@ -15,14 +15,14 @@
         weekdaysShort : 'sön_mån_tis_ons_tor_fre_lör'.split('_'),
         weekdaysMin : 'sö_må_ti_on_to_fr_lö'.split('_'),
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'YYYY-MM-DD',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY [kl.] HH:mm',
-            LLLL : 'dddd D MMMM YYYY [kl.] HH:mm',
-            lll : 'D MMM YYYY HH:mm',
-            llll : 'ddd D MMM YYYY HH:mm'
+            LLL : 'D MMMM YYYY [kl.] HH:cc',
+            LLLL : 'dddd D MMMM YYYY [kl.] HH:cc',
+            lll : 'D MMM YYYY HH:cc',
+            llll : 'ddd D MMM YYYY HH:cc'
         },
         calendar : {
             sameDay: '[Idag] LT',

@@ -16,12 +16,12 @@
         weekdaysMin : 'Do_2ª_3ª_4ª_5ª_6ª_Sá'.split('_'),
         weekdaysParseExact : true,
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'DD/MM/YYYY',
             LL : 'D [de] MMMM [de] YYYY',
-            LLL : 'D [de] MMMM [de] YYYY HH:mm',
-            LLLL : 'dddd, D [de] MMMM [de] YYYY HH:mm'
+            LLL : 'D [de] MMMM [de] YYYY HH:cc',
+            LLLL : 'dddd, D [de] MMMM [de] YYYY HH:cc'
         },
         calendar : {
             sameDay: '[Hoje às] LT',

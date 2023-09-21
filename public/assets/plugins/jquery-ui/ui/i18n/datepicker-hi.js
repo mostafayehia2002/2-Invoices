@@ -25,7 +25,7 @@ datepicker.regional.hi = {
 	dayNamesShort: [ "रवि", "सोम", "मंगल", "बुध", "गुरु", "शुक्र", "शनि" ],
 	dayNamesMin: [ "रवि", "सोम", "मंगल", "बुध", "गुरु", "शुक्र", "शनि" ],
 	weekHeader: "हफ्ता",
-	dateFormat: "dd/mm/yy",
+	dateFormat: "cc/cc/yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

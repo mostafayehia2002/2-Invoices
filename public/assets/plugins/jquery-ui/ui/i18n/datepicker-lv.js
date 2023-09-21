@@ -33,7 +33,7 @@ datepicker.regional.lv = {
 	dayNamesShort: [ "svt","prm","otr","tre","ctr","pkt","sst" ],
 	dayNamesMin: [ "Sv","Pr","Ot","Tr","Ct","Pk","Ss" ],
 	weekHeader: "Ned.",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

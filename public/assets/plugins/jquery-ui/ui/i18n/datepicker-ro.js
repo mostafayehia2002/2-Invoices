@@ -28,7 +28,7 @@ datepicker.regional.ro = {
 	dayNamesShort: [ "Dum", "Lun", "Mar", "Mie", "Joi", "Vin", "Sâm" ],
 	dayNamesMin: [ "Du","Lu","Ma","Mi","Jo","Vi","Sâ" ],
 	weekHeader: "Săpt",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

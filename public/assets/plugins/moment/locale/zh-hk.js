@@ -15,16 +15,16 @@
         weekdaysShort : '週日_週一_週二_週三_週四_週五_週六'.split('_'),
         weekdaysMin : '日_一_二_三_四_五_六'.split('_'),
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'YYYY/MM/DD',
             LL : 'YYYY年M月D日',
-            LLL : 'YYYY年M月D日 HH:mm',
-            LLLL : 'YYYY年M月D日dddd HH:mm',
+            LLL : 'YYYY年M月D日 HH:cc',
+            LLLL : 'YYYY年M月D日dddd HH:cc',
             l : 'YYYY/M/D',
             ll : 'YYYY年M月D日',
-            lll : 'YYYY年M月D日 HH:mm',
-            llll : 'YYYY年M月D日dddd HH:mm'
+            lll : 'YYYY年M月D日 HH:cc',
+            llll : 'YYYY年M月D日dddd HH:cc'
         },
         meridiemParse: /凌晨|早上|上午|中午|下午|晚上/,
         meridiemHour : function (hour, meridiem) {

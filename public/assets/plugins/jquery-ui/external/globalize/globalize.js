@@ -221,17 +221,17 @@ Globalize.cultures[ "default" ] = {
 				// short date pattern
 				d: "M/d/yyyy",
 				// long date pattern
-				D: "dddd, MMMM dd, yyyy",
+				D: "dddd, MMMM cc, yyyy",
 				// short time pattern
-				t: "h:mm tt",
+				t: "h:cc tt",
 				// long time pattern
-				T: "h:mm:ss tt",
+				T: "h:cc:ss tt",
 				// long date, short time pattern
-				f: "dddd, MMMM dd, yyyy h:mm tt",
+				f: "dddd, MMMM cc, yyyy h:cc tt",
 				// long date, long time pattern
-				F: "dddd, MMMM dd, yyyy h:mm:ss tt",
+				F: "dddd, MMMM cc, yyyy h:cc:ss tt",
 				// month/day pattern
-				M: "MMMM dd",
+				M: "MMMM cc",
 				// month/year pattern
 				Y: "yyyy MMMM",
 				// S is a sortable format that does not vary by culture

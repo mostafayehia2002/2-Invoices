@@ -15,12 +15,12 @@
         weekdaysShort : 'Àìk_Ajé_Ìsẹ́_Ọjr_Ọjb_Ẹtì_Àbá'.split('_'),
         weekdaysMin : 'Àì_Aj_Ìs_Ọr_Ọb_Ẹt_Àb'.split('_'),
         longDateFormat : {
-            LT : 'h:mm A',
-            LTS : 'h:mm:ss A',
+            LT : 'h:cc A',
+            LTS : 'h:cc:ss A',
             L : 'DD/MM/YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY h:mm A',
-            LLLL : 'dddd, D MMMM YYYY h:mm A'
+            LLL : 'D MMMM YYYY h:cc A',
+            LLLL : 'dddd, D MMMM YYYY h:cc A'
         },
         calendar : {
             sameDay : '[Ònì ni] LT',

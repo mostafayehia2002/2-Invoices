@@ -99,12 +99,12 @@
         weekdaysMin : 'ne_po_to_sr_če_pe_so'.split('_'),
         weekdaysParseExact : true,
         longDateFormat : {
-            LT : 'H:mm',
-            LTS : 'H:mm:ss',
+            LT : 'H:cc',
+            LTS : 'H:cc:ss',
             L : 'DD.MM.YYYY',
             LL : 'D. MMMM YYYY',
-            LLL : 'D. MMMM YYYY H:mm',
-            LLLL : 'dddd, D. MMMM YYYY H:mm'
+            LLL : 'D. MMMM YYYY H:cc',
+            LLLL : 'dddd, D. MMMM YYYY H:cc'
         },
         calendar : {
             sameDay  : '[danes ob] LT',

@@ -35,13 +35,13 @@
         weekdaysMin : 'Ai_Sm_Mo_Bu_Br_Su_Sn'.split('_'),
         weekdaysParseExact : true,
         longDateFormat : {
-            LT : 'A h:mm [vazta]',
-            LTS : 'A h:mm:ss [vazta]',
+            LT : 'A h:cc [vazta]',
+            LTS : 'A h:cc:ss [vazta]',
             L : 'DD-MM-YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY A h:mm [vazta]',
-            LLLL : 'dddd, MMMM[achea] Do, YYYY, A h:mm [vazta]',
-            llll: 'ddd, D MMM YYYY, A h:mm [vazta]'
+            LLL : 'D MMMM YYYY A h:cc [vazta]',
+            LLLL : 'dddd, MMMM[achea] Do, YYYY, A h:cc [vazta]',
+            llll: 'ddd, D MMM YYYY, A h:cc [vazta]'
         },
         calendar : {
             sameDay: '[Aiz] LT',

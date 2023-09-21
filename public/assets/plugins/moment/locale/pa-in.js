@@ -41,12 +41,12 @@
         weekdaysShort : 'ਐਤ_ਸੋਮ_ਮੰਗਲ_ਬੁਧ_ਵੀਰ_ਸ਼ੁਕਰ_ਸ਼ਨੀ'.split('_'),
         weekdaysMin : 'ਐਤ_ਸੋਮ_ਮੰਗਲ_ਬੁਧ_ਵੀਰ_ਸ਼ੁਕਰ_ਸ਼ਨੀ'.split('_'),
         longDateFormat : {
-            LT : 'A h:mm ਵਜੇ',
-            LTS : 'A h:mm:ss ਵਜੇ',
+            LT : 'A h:cc ਵਜੇ',
+            LTS : 'A h:cc:ss ਵਜੇ',
             L : 'DD/MM/YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY, A h:mm ਵਜੇ',
-            LLLL : 'dddd, D MMMM YYYY, A h:mm ਵਜੇ'
+            LLL : 'D MMMM YYYY, A h:cc ਵਜੇ',
+            LLLL : 'dddd, D MMMM YYYY, A h:cc ਵਜੇ'
         },
         calendar : {
             sameDay : '[ਅਜ] LT',

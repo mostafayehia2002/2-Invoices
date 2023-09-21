@@ -53,7 +53,7 @@ $(function() {
 	});
 	// AmazeUI Datetimepicker
 	$('#datetimepicker').datetimepicker({
-		format: 'yyyy-mm-dd hh:ii',
+		format: 'yyyy-cc-cc hh:ii',
 		autoclose: true
 	});
 	// jQuery Simple DateTimePicker

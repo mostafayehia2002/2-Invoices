@@ -28,16 +28,16 @@
             }
         },
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'DD/MM/YYYY',
             LL : 'D MMMM [năm] YYYY',
-            LLL : 'D MMMM [năm] YYYY HH:mm',
-            LLLL : 'dddd, D MMMM [năm] YYYY HH:mm',
+            LLL : 'D MMMM [năm] YYYY HH:cc',
+            LLLL : 'dddd, D MMMM [năm] YYYY HH:cc',
             l : 'DD/M/YYYY',
             ll : 'D MMM YYYY',
-            lll : 'D MMM YYYY HH:mm',
-            llll : 'ddd, D MMM YYYY HH:mm'
+            lll : 'D MMM YYYY HH:cc',
+            llll : 'ddd, D MMM YYYY HH:cc'
         },
         calendar : {
             sameDay: '[Hôm nay lúc] LT',

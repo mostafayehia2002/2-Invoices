@@ -25,7 +25,7 @@ datepicker.regional.ja = {
 	dayNamesShort: [ "日","月","火","水","木","金","土" ],
 	dayNamesMin: [ "日","月","火","水","木","金","土" ],
 	weekHeader: "週",
-	dateFormat: "yy/mm/dd",
+	dateFormat: "yy/cc/cc",
 	firstDay: 0,
 	isRTL: false,
 	showMonthAfterYear: true,

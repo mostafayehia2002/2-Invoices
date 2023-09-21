@@ -82,12 +82,12 @@
         weekdaysMin: 'So_Mé_Dë_Më_Do_Fr_Sa'.split('_'),
         weekdaysParseExact : true,
         longDateFormat: {
-            LT: 'H:mm [Auer]',
-            LTS: 'H:mm:ss [Auer]',
+            LT: 'H:cc [Auer]',
+            LTS: 'H:cc:ss [Auer]',
             L: 'DD.MM.YYYY',
             LL: 'D. MMMM YYYY',
-            LLL: 'D. MMMM YYYY H:mm [Auer]',
-            LLLL: 'dddd, D. MMMM YYYY H:mm [Auer]'
+            LLL: 'D. MMMM YYYY H:cc [Auer]',
+            LLLL: 'dddd, D. MMMM YYYY H:cc [Auer]'
         },
         calendar: {
             sameDay: '[Haut um] LT',

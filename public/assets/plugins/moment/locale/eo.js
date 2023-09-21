@@ -15,12 +15,12 @@
         weekdaysShort : 'dim_lun_mard_merk_ĵaŭ_ven_sab'.split('_'),
         weekdaysMin : 'di_lu_ma_me_ĵa_ve_sa'.split('_'),
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'YYYY-MM-DD',
             LL : 'D[-a de] MMMM, YYYY',
-            LLL : 'D[-a de] MMMM, YYYY HH:mm',
-            LLLL : 'dddd, [la] D[-a de] MMMM, YYYY HH:mm'
+            LLL : 'D[-a de] MMMM, YYYY HH:cc',
+            LLLL : 'dddd, [la] D[-a de] MMMM, YYYY HH:cc'
         },
         meridiemParse: /[ap]\.t\.m/i,
         isPM: function (input) {

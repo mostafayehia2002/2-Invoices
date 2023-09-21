@@ -17,16 +17,16 @@
         weekdaysMin : 'ig_al_ar_az_og_ol_lr'.split('_'),
         weekdaysParseExact : true,
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'YYYY-MM-DD',
             LL : 'YYYY[ko] MMMM[ren] D[a]',
-            LLL : 'YYYY[ko] MMMM[ren] D[a] HH:mm',
-            LLLL : 'dddd, YYYY[ko] MMMM[ren] D[a] HH:mm',
+            LLL : 'YYYY[ko] MMMM[ren] D[a] HH:cc',
+            LLLL : 'dddd, YYYY[ko] MMMM[ren] D[a] HH:cc',
             l : 'YYYY-M-D',
             ll : 'YYYY[ko] MMM D[a]',
-            lll : 'YYYY[ko] MMM D[a] HH:mm',
-            llll : 'ddd, YYYY[ko] MMM D[a] HH:mm'
+            lll : 'YYYY[ko] MMM D[a] HH:cc',
+            llll : 'ddd, YYYY[ko] MMM D[a] HH:cc'
         },
         calendar : {
             sameDay : '[gaur] LT[etan]',

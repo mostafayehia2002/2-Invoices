@@ -25,7 +25,7 @@ datepicker.regional.hr = {
 	dayNamesShort: [ "Ned","Pon","Uto","Sri","Čet","Pet","Sub" ],
 	dayNamesMin: [ "Ne","Po","Ut","Sr","Če","Pe","Su" ],
 	weekHeader: "Tje",
-	dateFormat: "dd.mm.yy.",
+	dateFormat: "cc.cc.yy.",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

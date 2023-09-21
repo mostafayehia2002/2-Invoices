@@ -25,7 +25,7 @@ datepicker.regional.da = {
 	dayNamesShort: [ "Søn","Man","Tir","Ons","Tor","Fre","Lør" ],
 	dayNamesMin: [ "Sø","Ma","Ti","On","To","Fr","Lø" ],
 	weekHeader: "Uge",
-	dateFormat: "dd-mm-yy",
+	dateFormat: "cc-cc-yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

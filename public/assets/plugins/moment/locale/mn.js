@@ -43,12 +43,12 @@
         weekdaysMin : 'Ня_Да_Мя_Лх_Пү_Ба_Бя'.split('_'),
         weekdaysParseExact : true,
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'YYYY-MM-DD',
             LL : 'YYYY оны MMMMын D',
-            LLL : 'YYYY оны MMMMын D HH:mm',
-            LLLL : 'dddd, YYYY оны MMMMын D HH:mm'
+            LLL : 'YYYY оны MMMMын D HH:cc',
+            LLLL : 'dddd, YYYY оны MMMMын D HH:cc'
         },
         meridiemParse: /ҮӨ|ҮХ/i,
         isPM : function (input) {

@@ -15,16 +15,16 @@
         weekdaysShort : '日_月_火_水_木_金_土'.split('_'),
         weekdaysMin : '日_月_火_水_木_金_土'.split('_'),
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'YYYY/MM/DD',
             LL : 'YYYY年M月D日',
-            LLL : 'YYYY年M月D日 HH:mm',
-            LLLL : 'YYYY年M月D日 dddd HH:mm',
+            LLL : 'YYYY年M月D日 HH:cc',
+            LLLL : 'YYYY年M月D日 dddd HH:cc',
             l : 'YYYY/MM/DD',
             ll : 'YYYY年M月D日',
-            lll : 'YYYY年M月D日 HH:mm',
-            llll : 'YYYY年M月D日(ddd) HH:mm'
+            lll : 'YYYY年M月D日 HH:cc',
+            llll : 'YYYY年M月D日(ddd) HH:cc'
         },
         meridiemParse: /午前|午後/i,
         isPM : function (input) {

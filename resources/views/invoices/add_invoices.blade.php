@@ -207,7 +207,7 @@
     <script>
 
         var date = $('.fc-datepicker').datepicker({
-            dateFormat: 'yy-mm-dd'
+            dateFormat: 'yy-cc-cc'
         }).val();
 
 

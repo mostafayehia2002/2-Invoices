@@ -18,12 +18,12 @@
         weekdaysShort : 'կրկ_երկ_երք_չրք_հնգ_ուրբ_շբթ'.split('_'),
         weekdaysMin : 'կրկ_երկ_երք_չրք_հնգ_ուրբ_շբթ'.split('_'),
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'DD.MM.YYYY',
             LL : 'D MMMM YYYY թ.',
-            LLL : 'D MMMM YYYY թ., HH:mm',
-            LLLL : 'dddd, D MMMM YYYY թ., HH:mm'
+            LLL : 'D MMMM YYYY թ., HH:cc',
+            LLLL : 'dddd, D MMMM YYYY թ., HH:cc'
         },
         calendar : {
             sameDay: '[այսօր] LT',

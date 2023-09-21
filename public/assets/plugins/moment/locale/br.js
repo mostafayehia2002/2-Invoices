@@ -60,12 +60,12 @@
         weekdaysMin : 'Su_Lu_Me_Mer_Ya_Gw_Sa'.split('_'),
         weekdaysParseExact : true,
         longDateFormat : {
-            LT : 'h[e]mm A',
-            LTS : 'h[e]mm:ss A',
+            LT : 'h[e]cc A',
+            LTS : 'h[e]cc:ss A',
             L : 'DD/MM/YYYY',
             LL : 'D [a viz] MMMM YYYY',
-            LLL : 'D [a viz] MMMM YYYY h[e]mm A',
-            LLLL : 'dddd, D [a viz] MMMM YYYY h[e]mm A'
+            LLL : 'D [a viz] MMMM YYYY h[e]cc A',
+            LLLL : 'dddd, D [a viz] MMMM YYYY h[e]cc A'
         },
         calendar : {
             sameDay : '[Hiziv da] LT',

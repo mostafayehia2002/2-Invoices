@@ -40,12 +40,12 @@
         weekdaysMin : 'zo_ma_di_wo_do_vr_za'.split('_'),
         weekdaysParseExact : true,
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'DD/MM/YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY HH:mm',
-            LLLL : 'dddd D MMMM YYYY HH:mm'
+            LLL : 'D MMMM YYYY HH:cc',
+            LLLL : 'dddd D MMMM YYYY HH:cc'
         },
         calendar : {
             sameDay: '[vandaag om] LT',

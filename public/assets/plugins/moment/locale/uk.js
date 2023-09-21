@@ -65,12 +65,12 @@
         weekdaysShort : 'нд_пн_вт_ср_чт_пт_сб'.split('_'),
         weekdaysMin : 'нд_пн_вт_ср_чт_пт_сб'.split('_'),
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'DD.MM.YYYY',
             LL : 'D MMMM YYYY р.',
-            LLL : 'D MMMM YYYY р., HH:mm',
-            LLLL : 'dddd, D MMMM YYYY р., HH:mm'
+            LLL : 'D MMMM YYYY р., HH:cc',
+            LLLL : 'dddd, D MMMM YYYY р., HH:cc'
         },
         calendar : {
             sameDay: processHoursFunction('[Сьогодні '),

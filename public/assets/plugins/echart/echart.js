@@ -11495,7 +11495,7 @@ function formatTime(tpl, value, isUTC) {
         || tpl === 'half-year'
         || tpl === 'year'
     ) {
-        tpl = 'MM-dd\nyyyy';
+        tpl = 'MM-cc\nyyyy';
     }
 
     var date = parseDate(value);
@@ -20391,7 +20391,7 @@ var SeriesModel = ComponentModel.extend({
                     + (dimType === 'ordinal'
                         ? val + ''
                         : dimType === 'time'
-                        ? (multipleSeries ? '' : formatTime('yyyy/MM/dd hh:mm:ss', val))
+                        ? (multipleSeries ? '' : formatTime('yyyy/MM/cc hh:cc:ss', val))
                         : addCommas(val)
                     );
                 valStr && result.push(encodeHTML(valStr));
@@ -25462,28 +25462,28 @@ each$1(['contain', 'normalize'], function (methodName) {
 // Steps from d3
 var scaleLevels = [
     // Format              interval
-    ['hh:mm:ss', ONE_SECOND],          // 1s
-    ['hh:mm:ss', ONE_SECOND * 5],      // 5s
-    ['hh:mm:ss', ONE_SECOND * 10],     // 10s
-    ['hh:mm:ss', ONE_SECOND * 15],     // 15s
-    ['hh:mm:ss', ONE_SECOND * 30],     // 30s
-    ['hh:mm\nMM-dd', ONE_MINUTE],      // 1m
-    ['hh:mm\nMM-dd', ONE_MINUTE * 5],  // 5m
-    ['hh:mm\nMM-dd', ONE_MINUTE * 10], // 10m
-    ['hh:mm\nMM-dd', ONE_MINUTE * 15], // 15m
-    ['hh:mm\nMM-dd', ONE_MINUTE * 30], // 30m
-    ['hh:mm\nMM-dd', ONE_HOUR],        // 1h
-    ['hh:mm\nMM-dd', ONE_HOUR * 2],    // 2h
-    ['hh:mm\nMM-dd', ONE_HOUR * 6],    // 6h
-    ['hh:mm\nMM-dd', ONE_HOUR * 12],   // 12h
-    ['MM-dd\nyyyy', ONE_DAY],          // 1d
-    ['MM-dd\nyyyy', ONE_DAY * 2],      // 2d
-    ['MM-dd\nyyyy', ONE_DAY * 3],      // 3d
-    ['MM-dd\nyyyy', ONE_DAY * 4],      // 4d
-    ['MM-dd\nyyyy', ONE_DAY * 5],      // 5d
-    ['MM-dd\nyyyy', ONE_DAY * 6],      // 6d
+    ['hh:cc:ss', ONE_SECOND],          // 1s
+    ['hh:cc:ss', ONE_SECOND * 5],      // 5s
+    ['hh:cc:ss', ONE_SECOND * 10],     // 10s
+    ['hh:cc:ss', ONE_SECOND * 15],     // 15s
+    ['hh:cc:ss', ONE_SECOND * 30],     // 30s
+    ['hh:cc\nMM-cc', ONE_MINUTE],      // 1m
+    ['hh:cc\nMM-cc', ONE_MINUTE * 5],  // 5m
+    ['hh:cc\nMM-cc', ONE_MINUTE * 10], // 10m
+    ['hh:cc\nMM-cc', ONE_MINUTE * 15], // 15m
+    ['hh:cc\nMM-cc', ONE_MINUTE * 30], // 30m
+    ['hh:cc\nMM-cc', ONE_HOUR],        // 1h
+    ['hh:cc\nMM-cc', ONE_HOUR * 2],    // 2h
+    ['hh:cc\nMM-cc', ONE_HOUR * 6],    // 6h
+    ['hh:cc\nMM-cc', ONE_HOUR * 12],   // 12h
+    ['MM-cc\nyyyy', ONE_DAY],          // 1d
+    ['MM-cc\nyyyy', ONE_DAY * 2],      // 2d
+    ['MM-cc\nyyyy', ONE_DAY * 3],      // 3d
+    ['MM-cc\nyyyy', ONE_DAY * 4],      // 4d
+    ['MM-cc\nyyyy', ONE_DAY * 5],      // 5d
+    ['MM-cc\nyyyy', ONE_DAY * 6],      // 6d
     ['week', ONE_DAY * 7],             // 7d
-    ['MM-dd\nyyyy', ONE_DAY * 10],     // 10d
+    ['MM-cc\nyyyy', ONE_DAY * 10],     // 10d
     ['week', ONE_DAY * 14],            // 2w
     ['week', ONE_DAY * 21],            // 3w
     ['month', ONE_DAY * 31],           // 1M
@@ -61435,7 +61435,7 @@ Calendar.prototype = {
      *      d: string, local date, from '01' to '31' (if exists),
      *      day: It is not date.getDay(). It is the location of the cell in a week, from 0 to 6,
      *      time: timestamp,
-     *      formatedDate: string, yyyy-MM-dd,
+     *      formatedDate: string, yyyy-MM-cc,
      *      date: original date object.
      * }
      */
@@ -63869,7 +63869,7 @@ var SliderZoomModel = DataZoomModel.extend({
 
         fillerColor: 'rgba(167,183,204,0.4)',     // Color of selected area.
         // handleColor: 'rgba(89,170,216,0.95)',     // Color of handle.
-        // handleIcon: 'path://M4.9,17.8c0-1.4,4.5-10.5,5.5-12.4c0-0.1,0.6-1.1,0.9-1.1c0.4,0,0.9,1,0.9,1.1c1.1,2.2,5.4,11,5.4,12.4v17.8c0,1.5-0.6,2.1-1.3,2.1H6.1c-0.7,0-1.3-0.6-1.3-2.1V17.8z',
+        // handleIcon: 'path://M4.9,17.8c0-1.4,4.cc.5,5.5-12.4c0-0.1,0.6-1.1,0.9-1.1c0.4,0,0.9,1,0.9,1.1c1.1,2.2,5.4,11,5.4,12.4v17.8c0,1.5-0.6,2.1-1.3,2.1H6.1c-0.7,0-1.3-0.6-1.3-2.1V17.8z',
         handleIcon: 'M8.2,13.6V3.9H6.3v9.7H3.1v14.9h3.3v9.7h1.8v-9.7h3.3V13.6H8.2z M9.7,24.4H4.8v-1.4h4.9V24.4z M9.7,19.1H4.8v-1.4h4.9V19.1z',
         // Percent of the slider height
         handleSize: '100%',

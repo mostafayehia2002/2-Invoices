@@ -24,7 +24,7 @@ datepicker.regional.eu = {
 	dayNamesShort: [ "ig.","al.","ar.","az.","og.","ol.","lr." ],
 	dayNamesMin: [ "ig","al","ar","az","og","ol","lr" ],
 	weekHeader: "As",
-	dateFormat: "yy-mm-dd",
+	dateFormat: "yy-cc-cc",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

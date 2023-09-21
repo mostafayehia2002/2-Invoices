@@ -60,16 +60,16 @@
         weekdaysShort : 'su_ma_ti_ke_to_pe_la'.split('_'),
         weekdaysMin : 'su_ma_ti_ke_to_pe_la'.split('_'),
         longDateFormat : {
-            LT : 'HH.mm',
-            LTS : 'HH.mm.ss',
+            LT : 'HH.cc',
+            LTS : 'HH.cc.ss',
             L : 'DD.MM.YYYY',
             LL : 'Do MMMM[ta] YYYY',
-            LLL : 'Do MMMM[ta] YYYY, [klo] HH.mm',
-            LLLL : 'dddd, Do MMMM[ta] YYYY, [klo] HH.mm',
+            LLL : 'Do MMMM[ta] YYYY, [klo] HH.cc',
+            LLLL : 'dddd, Do MMMM[ta] YYYY, [klo] HH.cc',
             l : 'D.M.YYYY',
             ll : 'Do MMM YYYY',
-            lll : 'Do MMM YYYY, [klo] HH.mm',
-            llll : 'ddd, Do MMM YYYY, [klo] HH.mm'
+            lll : 'Do MMM YYYY, [klo] HH.cc',
+            llll : 'ddd, Do MMM YYYY, [klo] HH.cc'
         },
         calendar : {
             sameDay : '[tänään] [klo] LT',

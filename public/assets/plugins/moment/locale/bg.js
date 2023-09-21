@@ -15,12 +15,12 @@
         weekdaysShort : 'нед_пон_вто_сря_чет_пет_съб'.split('_'),
         weekdaysMin : 'нд_пн_вт_ср_чт_пт_сб'.split('_'),
         longDateFormat : {
-            LT : 'H:mm',
-            LTS : 'H:mm:ss',
+            LT : 'H:cc',
+            LTS : 'H:cc:ss',
             L : 'D.MM.YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY H:mm',
-            LLLL : 'dddd, D MMMM YYYY H:mm'
+            LLL : 'D MMMM YYYY H:cc',
+            LLLL : 'dddd, D MMMM YYYY H:cc'
         },
         calendar : {
             sameDay : '[Днес в] LT',

@@ -25,7 +25,7 @@ datepicker.regional.ml = {
 	dayNamesShort: [ "ഞായ", "തിങ്ക", "ചൊവ്വ", "ബുധ", "വ്യാഴം", "വെള്ളി", "ശനി" ],
 	dayNamesMin: [ "ഞാ","തി","ചൊ","ബു","വ്യാ","വെ","ശ" ],
 	weekHeader: "ആ",
-	dateFormat: "dd/mm/yy",
+	dateFormat: "cc/cc/yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

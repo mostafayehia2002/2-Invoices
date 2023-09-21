@@ -27,11 +27,10 @@ class ProductController extends Controller
     {
         $request->validate([
 
-                    'product_name'=>['required','unique:products,product_name'],
+                    'product_name'=>['required'],
                      'section_id'=>['required'],
                   ],[
                     'product_name.required'=>'هذا الحقل مطلوب',
-                    'product_name.unique'=>'هذالمنتج موجود مسبقا',
                       'section_id'=>'هذا الحقل مطلوب'
                 ]);
                 Product::create([

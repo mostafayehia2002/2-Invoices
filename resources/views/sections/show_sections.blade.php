@@ -155,6 +155,7 @@
         </div>
         <!-- end Edit section -->
 
+
         <!-- delete section -->
         <div class="modal" id="DeleteModel">
             <div class="modal-dialog modal-dialog-centered" role="document">

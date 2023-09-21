@@ -25,7 +25,7 @@ datepicker.regional.af = {
 	dayNamesShort: [ "Son", "Maa", "Din", "Woe", "Don", "Vry", "Sat" ],
 	dayNamesMin: [ "So","Ma","Di","Wo","Do","Vr","Sa" ],
 	weekHeader: "Wk",
-	dateFormat: "dd/mm/yy",
+	dateFormat: "cc/cc/yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

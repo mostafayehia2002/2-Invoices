@@ -15,12 +15,12 @@
         weekdaysShort : 'Yak_Dush_Sesh_Chor_Pay_Jum_Shan'.split('_'),
         weekdaysMin : 'Ya_Du_Se_Cho_Pa_Ju_Sha'.split('_'),
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'DD/MM/YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY HH:mm',
-            LLLL : 'D MMMM YYYY, dddd HH:mm'
+            LLL : 'D MMMM YYYY HH:cc',
+            LLLL : 'D MMMM YYYY, dddd HH:cc'
         },
         calendar : {
             sameDay : '[Bugun soat] LT [da]',

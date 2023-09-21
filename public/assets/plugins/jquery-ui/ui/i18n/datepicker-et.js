@@ -33,7 +33,7 @@ datepicker.regional.et = {
 	dayNamesShort: [ "Pühap", "Esmasp", "Teisip", "Kolmap", "Neljap", "Reede", "Laup" ],
 	dayNamesMin: [ "P","E","T","K","N","R","L" ],
 	weekHeader: "näd",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

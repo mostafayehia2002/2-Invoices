@@ -25,7 +25,7 @@ datepicker.regional.sv = {
 	dayNames: [ "Söndag","Måndag","Tisdag","Onsdag","Torsdag","Fredag","Lördag" ],
 	dayNamesMin: [ "Sö","Må","Ti","On","To","Fr","Lö" ],
 	weekHeader: "Ve",
-	dateFormat: "yy-mm-dd",
+	dateFormat: "yy-cc-cc",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

@@ -24,7 +24,7 @@ datepicker.regional.hu = {
 	dayNamesShort: [ "Vas", "Hét", "Ked", "Sze", "Csü", "Pén", "Szo" ],
 	dayNamesMin: [ "V", "H", "K", "Sze", "Cs", "P", "Szo" ],
 	weekHeader: "Hét",
-	dateFormat: "yy.mm.dd.",
+	dateFormat: "yy.cc.cc.",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: true,

@@ -15,12 +15,12 @@
         weekdaysShort : 'sun_mán_týs_mik_hós_frí_ley'.split('_'),
         weekdaysMin : 'su_má_tý_mi_hó_fr_le'.split('_'),
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'DD/MM/YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY HH:mm',
-            LLLL : 'dddd D. MMMM, YYYY HH:mm'
+            LLL : 'D MMMM YYYY HH:cc',
+            LLLL : 'dddd D. MMMM, YYYY HH:cc'
         },
         calendar : {
             sameDay : '[Í dag kl.] LT',

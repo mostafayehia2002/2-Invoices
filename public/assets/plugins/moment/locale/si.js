@@ -17,12 +17,12 @@
         weekdaysMin : 'ඉ_ස_අ_බ_බ්‍ර_සි_සෙ'.split('_'),
         weekdaysParseExact : true,
         longDateFormat : {
-            LT : 'a h:mm',
-            LTS : 'a h:mm:ss',
+            LT : 'a h:cc',
+            LTS : 'a h:cc:ss',
             L : 'YYYY/MM/DD',
             LL : 'YYYY MMMM D',
-            LLL : 'YYYY MMMM D, a h:mm',
-            LLLL : 'YYYY MMMM D [වැනි] dddd, a h:mm:ss'
+            LLL : 'YYYY MMMM D, a h:cc',
+            LLLL : 'YYYY MMMM D [වැනි] dddd, a h:cc:ss'
         },
         calendar : {
             sameDay : '[අද] LT[ට]',

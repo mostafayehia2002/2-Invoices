@@ -75,7 +75,7 @@ class InvoicesDetailsController extends Controller
 
     }
 
-public  function  deleteFile(Request $r){
+   public  function  deleteFile(Request $r){
      $file=invoices_attachments::find($r->id_file);
      $file->delete();
        Storage::disk('invoices')->delete("$r->invoice_number/$r->file_name");

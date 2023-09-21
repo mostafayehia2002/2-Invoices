@@ -58,12 +58,12 @@ Globalize.addCultureInfo( "ja-JP", "default", {
 			PM: ["午後","午後","午後"],
 			eras: [{"name":"西暦","start":null,"offset":0}],
 			patterns: {
-				d: "yyyy/MM/dd",
+				d: "yyyy/MM/cc",
 				D: "yyyy'年'M'月'd'日'",
-				t: "H:mm",
-				T: "H:mm:ss",
-				f: "yyyy'年'M'月'd'日' H:mm",
-				F: "yyyy'年'M'月'd'日' H:mm:ss",
+				t: "H:cc",
+				T: "H:cc:ss",
+				f: "yyyy'年'M'月'd'日' H:cc",
+				F: "yyyy'年'M'月'd'日' H:cc:ss",
 				M: "M'月'd'日'",
 				Y: "yyyy'年'M'月'"
 			}
@@ -86,10 +86,10 @@ Globalize.addCultureInfo( "ja-JP", "default", {
 			patterns: {
 				d: "gg y/M/d",
 				D: "gg y'年'M'月'd'日'",
-				t: "H:mm",
-				T: "H:mm:ss",
-				f: "gg y'年'M'月'd'日' H:mm",
-				F: "gg y'年'M'月'd'日' H:mm:ss",
+				t: "H:cc",
+				T: "H:cc:ss",
+				f: "gg y'年'M'月'd'日' H:cc",
+				F: "gg y'年'M'月'd'日' H:cc:ss",
 				M: "M'月'd'日'",
 				Y: "gg y'年'M'月'"
 			}

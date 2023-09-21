@@ -25,7 +25,7 @@ datepicker.regional.kk = {
 	dayNamesShort: [ "жкс","дсн","ссн","срс","бсн","жма","снб" ],
 	dayNamesMin: [ "Жк","Дс","Сс","Ср","Бс","Жм","Сн" ],
 	weekHeader: "Не",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

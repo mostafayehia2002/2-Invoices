@@ -25,7 +25,7 @@ datepicker.regional.hy = {
 	dayNamesShort: [ "կիր","երկ","երք","չրք","հնգ","ուրբ","շբթ" ],
 	dayNamesMin: [ "կիր","երկ","երք","չրք","հնգ","ուրբ","շբթ" ],
 	weekHeader: "ՇԲՏ",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

@@ -1,12 +1,12 @@
 $(function() {
 	'use strict'
 	// Datepicker found in left sidebar of the page
-	var highlightedDays = ['2018-5-10', '2018-5-11', '2018-5-12', '2018-5-13', '2018-5-14', '2018-5-15', '2018-5-16'];
+	var highlightedDays = ['2018-cc', '2018-5-11', '2018-5-12', '2018-5-13', '2018-5-14', '2018-5-15', '2018-5-16'];
 	var date = new Date();
 	$('.fc-datepicker').datepicker({
 		showOtherMonths: true,
 		selectOtherMonths: true,
-		dateFormat: 'yy-mm-dd',
+		dateFormat: 'yy-cc-cc',
 		beforeShowDay: function(date) {
 			var m = date.getMonth(),
 				d = date.getDate(),

@@ -1,6 +1,6 @@
 /**
  * Estonian translation for bootstrap-datetimepicker
- * Rene Korss <http://rene.korss.ee> 
+ * Rene Korss <http://rene.korss.ee>
  */
 ;(function($){
 	$.fn.datetimepicker.dates['ee'] = {
@@ -13,6 +13,6 @@
 		suffix:     	[],
 		meridiem: 		[],
 		weekStart: 		1,
-		format: 		"dd.mm.yyyy hh:ii"
+		format: 		"cc.cc.yyyy hh:ii"
 	};
 }(jQuery));

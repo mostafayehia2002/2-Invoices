@@ -26,7 +26,7 @@ datepicker.regional.sl = {
 	dayNamesShort: [ "Ned","Pon","Tor","Sre","Čet","Pet","Sob" ],
 	dayNamesMin: [ "Ne","Po","To","Sr","Če","Pe","So" ],
 	weekHeader: "Teden",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

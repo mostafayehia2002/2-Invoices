@@ -25,7 +25,7 @@ datepicker.regional.az = {
 	dayNamesShort: [ "B","Be","Ça","Ç","Ca","C","Ş" ],
 	dayNamesMin: [ "B","B","Ç","С","Ç","C","Ş" ],
 	weekHeader: "Hf",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

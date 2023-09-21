@@ -16,12 +16,12 @@
         weekdaysShort : 'ఆది_సోమ_మంగళ_బుధ_గురు_శుక్ర_శని'.split('_'),
         weekdaysMin : 'ఆ_సో_మం_బు_గు_శు_శ'.split('_'),
         longDateFormat : {
-            LT : 'A h:mm',
-            LTS : 'A h:mm:ss',
+            LT : 'A h:cc',
+            LTS : 'A h:cc:ss',
             L : 'DD/MM/YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY, A h:mm',
-            LLLL : 'dddd, D MMMM YYYY, A h:mm'
+            LLL : 'D MMMM YYYY, A h:cc',
+            LLLL : 'dddd, D MMMM YYYY, A h:cc'
         },
         calendar : {
             sameDay : '[నేడు] LT',

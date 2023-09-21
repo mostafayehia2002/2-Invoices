@@ -86,7 +86,14 @@
                                         <button aria-expanded="false" aria-haspopup="true" class="btn ripple btn-warning" data-toggle="dropdown" type="button">العمليات<i class="fas fa-caret-down mr-1"></i></button>
                                         <div class="dropdown-menu tx-13">
                                             <a class="dropdown-item" href="{{route('invoices.edit',$invoice->id)}}">تعديل الفاتورة</a>
-                                            <a class="dropdown-item active" href="{{route('deleteInvoice',[$invoice->id,$invoice->invoice_number])}}" onclick="return confirm('هل انت متاكد من حذف الفاتورة')">حذف الفاتورة</a>
+
+                                             <a class="dropdown-item active" data-effect="effect-scale"
+                                               data-id="{{$invoice->id}}" data-invoice_number="{{$invoice->invoice_number}}"
+                                               data-toggle="modal" href="#ArchiveModel" title="حذف"> ارشفة الفاتورة</a>
+
+                                            <a class="dropdown-item" data-effect="effect-scale"
+                                               data-id="{{$invoice->id}}" data-invoice_number="{{$invoice->invoice_number}}"
+                                               data-toggle="modal" href="#DeleteModel" title="حذف"> حذف الفاتورة</a>
                                         </div>
                                     </div>
                                 </td>
@@ -102,6 +109,53 @@
     </div>
     <!-- row closed -->
     </div>
+    <!-- archive  invoice -->
+    <div class="modal" id="ArchiveModel">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">ارشفة الفاتورة</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <form action="{{route('archiveInvoice')}}" method="post">
+                    @csrf
+                    <div class="modal-body">
+                        <p>هل انت متاكد من ارشفه الفاتورة ؟</p><br>
+                        <input type="hidden" name="id" id="id" value="">
+                        <input class="form-control" name="invoice_number" id="invoice_number" type="text" readonly>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">الغاء</button>
+                        <button type="submit" class="btn btn-danger">تاكيد</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--end  archive invoice -->
+    <!-- delete  invoice -->
+    <div class="modal" id="DeleteModel">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">ارشفة الفاتورة</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <form action="{{route('deleteInvoice')}}" method="post">
+                    @csrf
+                    <div class="modal-body">
+                        <p>هل انت متاكد من ارشفه الفاتورة ؟</p><br>
+                        <input type="hidden" name="id" id="id" value="">
+                        <input class="form-control" name="invoice_number" id="invoice_number" type="text" readonly>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">الغاء</button>
+                        <button type="submit" class="btn btn-danger">تاكيد</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--end  delete invoice -->
+
     <!-- Container closed -->
     </div>
     <!-- main-content closed -->
@@ -114,6 +168,28 @@
                 e.style.display='none';
             },3000) ;
         });
+    </script>
+    <script>
+        $("#ArchiveModel").on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var id = button.data('id')
+            var invoice_number = button.data('invoice_number')
+            var modal = $(this)
+            modal.find('.modal-body #id').val(id);
+            modal.find('.modal-body #invoice_number').val(invoice_number);
+        })
+
+    </script>
+    <script>
+        $("#DeleteModel").on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var id = button.data('id')
+            var invoice_number = button.data('invoice_number')
+            var modal = $(this)
+            modal.find('.modal-body #id').val(id);
+            modal.find('.modal-body #invoice_number').val(invoice_number);
+        })
+
     </script>
     <!-- Internal Data tables -->
     <script src="{{URL::asset('assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>

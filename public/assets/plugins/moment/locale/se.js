@@ -15,12 +15,12 @@
         weekdaysShort : 'sotn_vuos_maŋ_gask_duor_bear_láv'.split('_'),
         weekdaysMin : 's_v_m_g_d_b_L'.split('_'),
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'DD.MM.YYYY',
             LL : 'MMMM D. [b.] YYYY',
-            LLL : 'MMMM D. [b.] YYYY [ti.] HH:mm',
-            LLLL : 'dddd, MMMM D. [b.] YYYY [ti.] HH:mm'
+            LLL : 'MMMM D. [b.] YYYY [ti.] HH:cc',
+            LLLL : 'dddd, MMMM D. [b.] YYYY [ti.] HH:cc'
         },
         calendar : {
             sameDay: '[otne ti] LT',

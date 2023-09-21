@@ -37,7 +37,7 @@ datepicker.regional.no = {
 	dayNames: [ "søndag","mandag","tirsdag","onsdag","torsdag","fredag","lørdag" ],
 	dayNamesMin: [ "sø","ma","ti","on","to","fr","lø" ],
 	weekHeader: "Uke",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

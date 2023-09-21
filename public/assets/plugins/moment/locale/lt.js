@@ -67,16 +67,16 @@
         weekdaysMin : 'S_P_A_T_K_Pn_Š'.split('_'),
         weekdaysParseExact : true,
         longDateFormat : {
-            LT : 'HH:mm',
-            LTS : 'HH:mm:ss',
+            LT : 'HH:cc',
+            LTS : 'HH:cc:ss',
             L : 'YYYY-MM-DD',
             LL : 'YYYY [m.] MMMM D [d.]',
-            LLL : 'YYYY [m.] MMMM D [d.], HH:mm [val.]',
-            LLLL : 'YYYY [m.] MMMM D [d.], dddd, HH:mm [val.]',
+            LLL : 'YYYY [m.] MMMM D [d.], HH:cc [val.]',
+            LLLL : 'YYYY [m.] MMMM D [d.], dddd, HH:cc [val.]',
             l : 'YYYY-MM-DD',
             ll : 'YYYY [m.] MMMM D [d.]',
-            lll : 'YYYY [m.] MMMM D [d.], HH:mm [val.]',
-            llll : 'YYYY [m.] MMMM D [d.], ddd, HH:mm [val.]'
+            lll : 'YYYY [m.] MMMM D [d.], HH:cc [val.]',
+            llll : 'YYYY [m.] MMMM D [d.], ddd, HH:cc [val.]'
         },
         calendar : {
             sameDay : '[Šiandien] LT',

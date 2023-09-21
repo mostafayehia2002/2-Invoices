@@ -66,12 +66,12 @@
         // Выражение, которое соотвествует только сокращённым формам
         monthsShortStrictRegex: /^(янв\.|февр?\.|мар[т.]|апр\.|ма[яй]|июн[ья.]|июл[ья.]|авг\.|сент?\.|окт\.|нояб?\.|дек\.)/i,
         longDateFormat : {
-            LT : 'H:mm',
-            LTS : 'H:mm:ss',
+            LT : 'H:cc',
+            LTS : 'H:cc:ss',
             L : 'DD.MM.YYYY',
             LL : 'D MMMM YYYY г.',
-            LLL : 'D MMMM YYYY г., H:mm',
-            LLLL : 'dddd, D MMMM YYYY г., H:mm'
+            LLL : 'D MMMM YYYY г., H:cc',
+            LLLL : 'dddd, D MMMM YYYY г., H:cc'
         },
         calendar : {
             sameDay: '[Сегодня, в] LT',

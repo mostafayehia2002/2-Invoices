@@ -21,12 +21,12 @@
         weekdaysShort: 'يە_دۈ_سە_چا_پە_جۈ_شە'.split('_'),
         weekdaysMin: 'يە_دۈ_سە_چا_پە_جۈ_شە'.split('_'),
         longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
+            LT: 'HH:cc',
+            LTS: 'HH:cc:ss',
             L: 'YYYY-MM-DD',
             LL: 'YYYY-يىلىM-ئاينىڭD-كۈنى',
-            LLL: 'YYYY-يىلىM-ئاينىڭD-كۈنى، HH:mm',
-            LLLL: 'dddd، YYYY-يىلىM-ئاينىڭD-كۈنى، HH:mm'
+            LLL: 'YYYY-يىلىM-ئاينىڭD-كۈنى، HH:cc',
+            LLLL: 'dddd، YYYY-يىلىM-ئاينىڭD-كۈنى، HH:cc'
         },
         meridiemParse: /يېرىم كېچە|سەھەر|چۈشتىن بۇرۇن|چۈش|چۈشتىن كېيىن|كەچ/,
         meridiemHour: function (hour, meridiem) {

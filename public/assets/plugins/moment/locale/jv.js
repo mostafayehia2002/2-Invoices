@@ -15,12 +15,12 @@
         weekdaysShort : 'Min_Sen_Sel_Reb_Kem_Jem_Sep'.split('_'),
         weekdaysMin : 'Mg_Sn_Sl_Rb_Km_Jm_Sp'.split('_'),
         longDateFormat : {
-            LT : 'HH.mm',
-            LTS : 'HH.mm.ss',
+            LT : 'HH.cc',
+            LTS : 'HH.cc.ss',
             L : 'DD/MM/YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY [pukul] HH.mm',
-            LLLL : 'dddd, D MMMM YYYY [pukul] HH.mm'
+            LLL : 'D MMMM YYYY [pukul] HH.cc',
+            LLLL : 'dddd, D MMMM YYYY [pukul] HH.cc'
         },
         meridiemParse: /enjing|siyang|sonten|ndalu/,
         meridiemHour : function (hour, meridiem) {

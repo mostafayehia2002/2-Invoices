@@ -25,7 +25,7 @@ datepicker.regional.ms = {
 	dayNamesShort: [ "Aha","Isn","Sel","Rab","kha","Jum","Sab" ],
 	dayNamesMin: [ "Ah","Is","Se","Ra","Kh","Ju","Sa" ],
 	weekHeader: "Mg",
-	dateFormat: "dd/mm/yy",
+	dateFormat: "cc/cc/yy",
 	firstDay: 0,
 	isRTL: false,
 	showMonthAfterYear: false,

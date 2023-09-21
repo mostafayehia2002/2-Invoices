@@ -65,13 +65,13 @@ Globalize.addCultureInfo( "de-DE", "default", {
 			PM: null,
 			eras: [{"name":"n. Chr.","start":null,"offset":0}],
 			patterns: {
-				d: "dd.MM.yyyy",
+				d: "cc.MM.yyyy",
 				D: "dddd, d. MMMM yyyy",
-				t: "HH:mm",
-				T: "HH:mm:ss",
-				f: "dddd, d. MMMM yyyy HH:mm",
-				F: "dddd, d. MMMM yyyy HH:mm:ss",
-				M: "dd MMMM",
+				t: "HH:cc",
+				T: "HH:cc:ss",
+				f: "dddd, d. MMMM yyyy HH:cc",
+				F: "dddd, d. MMMM yyyy HH:cc:ss",
+				M: "cc MMMM",
 				Y: "MMMM yyyy"
 			}
 		}

@@ -25,7 +25,7 @@ datepicker.regional.km = {
 	dayNamesShort: [ "អា", "ច", "អ", "ពុ", "ព្រហ", "សុ", "សៅ" ],
 	dayNamesMin: [ "អា", "ច", "អ", "ពុ", "ព្រហ", "សុ", "សៅ" ],
 	weekHeader: "សប្ដាហ៍",
-	dateFormat: "dd-mm-yy",
+	dateFormat: "cc-cc-yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

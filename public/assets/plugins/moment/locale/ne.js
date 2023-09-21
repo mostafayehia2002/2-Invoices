@@ -42,12 +42,12 @@
         weekdaysMin : 'आ._सो._मं._बु._बि._शु._श.'.split('_'),
         weekdaysParseExact : true,
         longDateFormat : {
-            LT : 'Aको h:mm बजे',
-            LTS : 'Aको h:mm:ss बजे',
+            LT : 'Aको h:cc बजे',
+            LTS : 'Aको h:cc:ss बजे',
             L : 'DD/MM/YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY, Aको h:mm बजे',
-            LLLL : 'dddd, D MMMM YYYY, Aको h:mm बजे'
+            LLL : 'D MMMM YYYY, Aको h:cc बजे',
+            LLLL : 'dddd, D MMMM YYYY, Aको h:cc बजे'
         },
         preparse: function (string) {
             return string.replace(/[१२३४५६७८९०]/g, function (match) {

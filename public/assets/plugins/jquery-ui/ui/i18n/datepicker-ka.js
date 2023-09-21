@@ -36,7 +36,7 @@ datepicker.regional.ka = {
 	dayNamesShort: [ "კვ","ორშ","სამ","ოთხ","ხუთ","პარ","შაბ" ],
 	dayNamesMin: [ "კვ","ორშ","სამ","ოთხ","ხუთ","პარ","შაბ" ],
 	weekHeader: "კვირა",
-	dateFormat: "dd-mm-yy",
+	dateFormat: "cc-cc-yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

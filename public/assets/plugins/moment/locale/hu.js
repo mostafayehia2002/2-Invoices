@@ -50,12 +50,12 @@
         weekdaysShort : 'vas_hét_kedd_sze_csüt_pén_szo'.split('_'),
         weekdaysMin : 'v_h_k_sze_cs_p_szo'.split('_'),
         longDateFormat : {
-            LT : 'H:mm',
-            LTS : 'H:mm:ss',
+            LT : 'H:cc',
+            LTS : 'H:cc:ss',
             L : 'YYYY.MM.DD.',
             LL : 'YYYY. MMMM D.',
-            LLL : 'YYYY. MMMM D. H:mm',
-            LLLL : 'YYYY. MMMM D., dddd H:mm'
+            LLL : 'YYYY. MMMM D. H:cc',
+            LLLL : 'YYYY. MMMM D., dddd H:cc'
         },
         meridiemParse: /de|du/i,
         isPM: function (input) {

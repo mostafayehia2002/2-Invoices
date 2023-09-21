@@ -40,12 +40,12 @@
         weekdaysShort : 'রবি_সোম_মঙ্গল_বুধ_বৃহস্পতি_শুক্র_শনি'.split('_'),
         weekdaysMin : 'রবি_সোম_মঙ্গ_বুধ_বৃহঃ_শুক্র_শনি'.split('_'),
         longDateFormat : {
-            LT : 'A h:mm সময়',
-            LTS : 'A h:mm:ss সময়',
+            LT : 'A h:cc সময়',
+            LTS : 'A h:cc:ss সময়',
             L : 'DD/MM/YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY, A h:mm সময়',
-            LLLL : 'dddd, D MMMM YYYY, A h:mm সময়'
+            LLL : 'D MMMM YYYY, A h:cc সময়',
+            LLLL : 'dddd, D MMMM YYYY, A h:cc সময়'
         },
         calendar : {
             sameDay : '[আজ] LT',

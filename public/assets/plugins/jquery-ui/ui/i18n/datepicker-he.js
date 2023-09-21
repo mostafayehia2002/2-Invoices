@@ -25,7 +25,7 @@ datepicker.regional.he = {
 	dayNamesShort: [ "א'","ב'","ג'","ד'","ה'","ו'","שבת" ],
 	dayNamesMin: [ "א'","ב'","ג'","ד'","ה'","ו'","שבת" ],
 	weekHeader: "Wk",
-	dateFormat: "dd/mm/yy",
+	dateFormat: "cc/cc/yy",
 	firstDay: 0,
 	isRTL: true,
 	showMonthAfterYear: false,

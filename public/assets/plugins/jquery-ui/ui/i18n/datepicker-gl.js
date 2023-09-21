@@ -25,7 +25,7 @@ datepicker.regional.gl = {
 	dayNamesShort: [ "Dom","Lun","Mar","Mér","Xov","Ven","Sáb" ],
 	dayNamesMin: [ "Do","Lu","Ma","Mé","Xo","Ve","Sá" ],
 	weekHeader: "Sm",
-	dateFormat: "dd/mm/yy",
+	dateFormat: "cc/cc/yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

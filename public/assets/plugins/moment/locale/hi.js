@@ -41,12 +41,12 @@
         weekdaysShort : 'रवि_सोम_मंगल_बुध_गुरू_शुक्र_शनि'.split('_'),
         weekdaysMin : 'र_सो_मं_बु_गु_शु_श'.split('_'),
         longDateFormat : {
-            LT : 'A h:mm बजे',
-            LTS : 'A h:mm:ss बजे',
+            LT : 'A h:cc बजे',
+            LTS : 'A h:cc:ss बजे',
             L : 'DD/MM/YYYY',
             LL : 'D MMMM YYYY',
-            LLL : 'D MMMM YYYY, A h:mm बजे',
-            LLLL : 'dddd, D MMMM YYYY, A h:mm बजे'
+            LLL : 'D MMMM YYYY, A h:cc बजे',
+            LLLL : 'dddd, D MMMM YYYY, A h:cc बजे'
         },
         calendar : {
             sameDay : '[आज] LT',

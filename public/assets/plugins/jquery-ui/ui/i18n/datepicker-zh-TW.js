@@ -25,7 +25,7 @@ datepicker.regional[ "zh-TW" ] = {
 	dayNamesShort: [ "周日","周一","周二","周三","周四","周五","周六" ],
 	dayNamesMin: [ "日","一","二","三","四","五","六" ],
 	weekHeader: "周",
-	dateFormat: "yy/mm/dd",
+	dateFormat: "yy/cc/cc",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: true,

@@ -25,7 +25,7 @@ datepicker.regional[ "fr-CH" ] = {
 	dayNamesShort: [ "dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam." ],
 	dayNamesMin: [ "D", "L", "M", "M", "J", "V", "S" ],
 	weekHeader: "Sm",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

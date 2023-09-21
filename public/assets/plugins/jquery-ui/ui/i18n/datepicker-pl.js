@@ -25,7 +25,7 @@ datepicker.regional.pl = {
 	dayNamesShort: [ "Nie","Pn","Wt","Śr","Czw","Pt","So" ],
 	dayNamesMin: [ "N","Pn","Wt","Śr","Cz","Pt","So" ],
 	weekHeader: "Tydz",
-	dateFormat: "dd.mm.yy",
+	dateFormat: "cc.cc.yy",
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,
