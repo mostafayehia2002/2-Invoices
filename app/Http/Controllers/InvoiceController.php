@@ -85,7 +85,6 @@ class InvoiceController extends Controller
             'invoice_number'=>$request->Invoice_number,
             'product'=>$request->Product,
             'section'=>$request->Section,
-            'note'=>$request->Note,
             'created_by'=>Auth::user()->name,
         ]);
         if($request->hasFile('Pic')){
@@ -182,4 +181,48 @@ class InvoiceController extends Controller
         return redirect()->back()->with('success-delete-invoice','تم حذف الفاتوة بنجاح');
 
     }
+
+   public function showStatus($id){
+    $data=Invoice::find($id)->first();
+return  view('invoices.change_payment_status',compact('data'));
 }
+public function updateStatus(Request $request){
+
+    $request->validate([
+        'Payment_Status'=>['required'],
+
+    ],[
+        'Payment_Status.required'=>'يرجي ادخال حالة الفاتورة',
+        ]);
+    Invoice::where('id',$request->Invoice_id)->update([
+        'invoice_number' =>$request->Invoice_number,
+        'invoice_date' =>$request->Invoice_Date,
+        'due_date' =>$request->Due_date,
+        'product' =>$request->Product,
+        'section_id'=>$request->Section,
+        'amount_collection'=>$request->Amount_collection,
+        'amount_commission'=>$request->Amount_Commission,
+        'discount'=>$request->Discount,
+        'rate_vat'=>$request->Rate_VAT,
+        'value_vat'=>$request->Value_VAT,
+        'total'=>$request->Total,
+        'note'=>$request->Note,
+        'value_status'=>$request->Payment_Status,
+        'status'=>$request->Payment_Status==='1'? ' مدفوعة':'مدفوعة جزئيا',
+        'created_by'=>Auth::user()->name,
+    ]);
+
+    invoices_details::create([
+        'invoice_id'=>$request->Invoice_id,
+        'invoice_number'=>$request->Invoice_number,
+        'product'=>$request->Product,
+        'section'=>$request->Section,
+        'value_status'=>$request->Payment_Status,
+        'status'=>$request->Payment_Status==='1'? ' مدفوعة':'مدفوعة جزئيا',
+        'payment_date'=>$request->Payment_Date,
+        'created_by'=>Auth::user()->name,
+    ]);
+    return  redirect('/invoices')->with('success-update-invoice','تم تعديل حالة الفاتورة بنجاح');
+}
+}
+

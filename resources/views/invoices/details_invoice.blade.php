@@ -150,7 +150,6 @@
                                                             <th>القسم</th>
                                                             <th>حالة الدفع</th>
                                                             <th>تاريخ الدفع </th>
-                                                            <th>ملاحظات</th>
                                                             <th>تاريخ الاضافة </th>
                                                             <th>المستخدم</th>
                                                         </tr>
@@ -173,11 +172,11 @@
                                                                     </td>
                                                                 @else
                                                                     <td><span
-                                                                            class="badge badge-pill badge-warning">{{ $detail->status }}</span>
+                                                                            class="badge badge-pill badge-warning">{{$detail->status}}</span>
                                                                     </td>
                                                                 @endif
-                                                                <td>{{ $detail->payment_date }}</td>
-                                                                <td>{{ $detail->note }}</td>
+
+                                                                <td>{{$detail->payment_date}}</td>
                                                                 <td>{{ $detail->created_at }}</td>
                                                                 <td>{{ $detail->created_by }}</td>
                                                             </tr>

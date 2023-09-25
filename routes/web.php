@@ -41,6 +41,10 @@ Route::middleware('admin')->group(function (){
     Route::get('section/{id}',[InvoiceController::class,'getProducts']);
     Route::Post('archive',[InvoiceController::class,'archive'])->name('archiveInvoice');
     Route::Post('delete',[InvoiceController::class,'delete'])->name('deleteInvoice');
+    Route::get('show_status/{id}',[InvoiceController::class,'showStatus'])->name('showStatus');
+    Route::Post('update_status',[InvoiceController::class,'updateStatus'])->name('updateStatus');
+
+
 
 });
 

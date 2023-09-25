@@ -94,7 +94,13 @@
                                             <a class="dropdown-item" data-effect="effect-scale"
                                                data-id="{{$invoice->id}}" data-invoice_number="{{$invoice->invoice_number}}"
                                                data-toggle="modal" href="#DeleteModel" title="حذف"> حذف الفاتورة</a>
+
+                                            <a class="dropdown-item" href="{{route('showStatus',$invoice->id)}}" title="تغيير حالة الدفع"> تغيير حالة الدفع</a>
                                         </div>
+
+
+
+
                                     </div>
                                 </td>
                             </tr>

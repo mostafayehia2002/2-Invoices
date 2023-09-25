@@ -27,7 +27,6 @@ return new class extends Migration
             $table->string('status',50)->default('غير مدفوعه');
             $table->boolean('value_status')->default('0');
             $table->text('note')->nullable();
-            $table->date('payment_date')->nullable();
             $table->string('created_by');
             $table->softDeletes();
             $table->timestamps();
