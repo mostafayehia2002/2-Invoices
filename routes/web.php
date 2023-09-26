@@ -31,11 +31,12 @@ Route::middleware('admin')->group(function (){
 
 //    Route::get('/{page}', [AdminController::class,'index']);
     //
-
     Route::resource('invoices',InvoiceController::class);
     Route::resource('sections',SectionController::class);
     Route::resource('products',ProductController::class);
     Route::resource('invoiceDetails',InvoicesDetailsController::class);
+    Route::get('details/{id}',[InvoicesDetailsController::class,'showDetails'])->name('showDetails');
+
     Route::Post('delete_attachment',[InvoicesDetailsController::class,'deleteFile'])->name('deleteFile');
     Route::get('download/{invoice_number}/{file_name}',[InvoicesDetailsController::class,'download'])->name('download_file');
     Route::get('section/{id}',[InvoiceController::class,'getProducts']);
@@ -43,7 +44,12 @@ Route::middleware('admin')->group(function (){
     Route::Post('delete',[InvoiceController::class,'delete'])->name('deleteInvoice');
     Route::get('show_status/{id}',[InvoiceController::class,'showStatus'])->name('showStatus');
     Route::Post('update_status',[InvoiceController::class,'updateStatus'])->name('updateStatus');
-
+    Route::get('invoice_paid',[InvoiceController::class,'invoicePaid'])->name('invoicePaid');
+    Route::get('invoice_unpaid',[InvoiceController::class,'invoiceUnpaid'])->name('invoiceUnpaid');
+    Route::get('invoice_partially',[InvoiceController::class,'invoicePartiallyPaid'])->name('invoicePartiallyPaid');
+    Route::get('invoice_archive',[InvoiceController::class,'invoiceArchive'])->name('invoiceArchive');
+    Route::get('restore_invoice/{id}',[InvoiceController::class,'restoreInvoice'])->name('restoreInvoice');
+    Route::get('print_invoice/{id}',[InvoiceController::class,'printInvoice'])->name('printInvoice');
 
 
 });

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    قائمة الفواتير
+    الفواتير المورشفة
 @endsection
 @section('css')
     <!-- Internal Data table css -->
@@ -17,19 +17,17 @@
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">الفواتير</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">قائمه الفواتير</span>
+                <h4 class="content-title mb-0 my-auto">الفواتير</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">الفواتير المورشفة</span>
             </div>
         </div>
     </div>
     <!-- breadcrumb -->
 @endsection
 @section('content')
-    @if(session('success-add-invoice'))
-        <div class="alert alert-success">{{ session()->get('success-add-invoice') }}</div>
+    @if(session('success-restore-invoice'))
+        <div class="alert alert-success">{{ session()->get('success-restore-invoice') }}</div>
     @endif
-    @if(session('success-update-invoice'))
-        <div class="alert alert-success">{{ session()->get('success-update-invoice') }}</div>
-    @endif
+
     @if(session('success-delete-invoice'))
         <div class="alert alert-success">{{ session()->get('success-delete-invoice') }}</div>
     @endif
@@ -85,20 +83,21 @@
                                     <div class="dropdown">
                                         <button aria-expanded="false" aria-haspopup="true" class="btn ripple btn-warning" data-toggle="dropdown" type="button">العمليات<i class="fas fa-caret-down mr-1"></i></button>
                                         <div class="dropdown-menu tx-13">
-                                            <a class="dropdown-item" href="{{route('invoices.edit',$invoice->id)}}">تعديل الفاتورة</a>
 
-                                             <a class="dropdown-item active" data-effect="effect-scale"
+                                            <a class="dropdown-item active"  href="{{route('restoreInvoice',$invoice->id)}}" title="استرجاع الفاتورة"> استرجاع الفاتورة</a>
+
+                                            <a class="dropdown-item" data-effect="effect-scale"
                                                data-id="{{$invoice->id}}" data-invoice_number="{{$invoice->invoice_number}}"
-                                               data-toggle="modal" href="#ArchiveModel" title="حذف"> ارشفة الفاتورة</a>
+                                               data-toggle="modal" href="#DeleteModel" title="حذف"> حذف الفاتورة</a>
 
-                                            <a class="dropdown-item" href="{{route('showStatus',$invoice->id)}}" title="تغيير حالة الدفع"> تغيير حالة الدفع</a>
-                                            <a class="dropdown-item" href="{{route('printInvoice',$invoice->id)}}" title="طباعة الفاتورة"> طباعة الفاتورة</a>
                                         </div>
 
 
 
 
                                     </div>
+
+
                                 </td>
                             </tr>
                             @endforeach
@@ -112,17 +111,19 @@
     </div>
     <!-- row closed -->
     </div>
-    <!-- archive  invoice -->
-    <div class="modal" id="ArchiveModel">
+
+
+    <!-- delete  invoice -->
+    <div class="modal" id="DeleteModel">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title">ارشفة الفاتورة</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                    <h6 class="modal-title">حذف الفاتورة</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
                 </div>
-                <form action="{{route('archiveInvoice')}}" method="post">
+                <form action="{{route('deleteInvoice')}}" method="post">
                     @csrf
                     <div class="modal-body">
-                        <p>هل انت متاكد من ارشفه الفاتورة ؟</p><br>
+                        <p>هل انت متاكد من حذف الفاتورة ؟</p><br>
                         <input type="hidden" name="id" id="id" value="">
                         <input class="form-control" name="invoice_number" id="invoice_number" type="text" readonly>
                     </div>
@@ -134,8 +135,7 @@
             </div>
         </div>
     </div>
-    <!--end  archive invoice -->
-
+    <!--end  delete invoice -->
 
     <!-- Container closed -->
     </div>
@@ -151,7 +151,7 @@
         });
     </script>
     <script>
-        $("#ArchiveModel").on('show.bs.modal', function(event) {
+        $("#DeleteModel").on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
             var invoice_number = button.data('invoice_number')

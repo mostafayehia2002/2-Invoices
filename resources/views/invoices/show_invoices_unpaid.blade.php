@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    قائمة الفواتير
+    الفواتير الغير مدفوعة
 @endsection
 @section('css')
     <!-- Internal Data table css -->
@@ -17,7 +17,7 @@
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">الفواتير</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">قائمه الفواتير</span>
+                <h4 class="content-title mb-0 my-auto">الفواتير</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">الفواتير الغير مدفوعة</span>
             </div>
         </div>
     </div>
@@ -91,8 +91,11 @@
                                                data-id="{{$invoice->id}}" data-invoice_number="{{$invoice->invoice_number}}"
                                                data-toggle="modal" href="#ArchiveModel" title="حذف"> ارشفة الفاتورة</a>
 
+                                            <a class="dropdown-item" data-effect="effect-scale"
+                                               data-id="{{$invoice->id}}" data-invoice_number="{{$invoice->invoice_number}}"
+                                               data-toggle="modal" href="#DeleteModel" title="حذف"> حذف الفاتورة</a>
+
                                             <a class="dropdown-item" href="{{route('showStatus',$invoice->id)}}" title="تغيير حالة الدفع"> تغيير حالة الدفع</a>
-                                            <a class="dropdown-item" href="{{route('printInvoice',$invoice->id)}}" title="طباعة الفاتورة"> طباعة الفاتورة</a>
                                         </div>
 
 
@@ -135,7 +138,29 @@
         </div>
     </div>
     <!--end  archive invoice -->
-
+    <!-- delete  invoice -->
+    <div class="modal" id="DeleteModel">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">ارشفة الفاتورة</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <form action="{{route('deleteInvoice')}}" method="post">
+                    @csrf
+                    <div class="modal-body">
+                        <p>هل انت متاكد من ارشفه الفاتورة ؟</p><br>
+                        <input type="hidden" name="id" id="id" value="">
+                        <input class="form-control" name="invoice_number" id="invoice_number" type="text" readonly>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">الغاء</button>
+                        <button type="submit" class="btn btn-danger">تاكيد</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--end  delete invoice -->
 
     <!-- Container closed -->
     </div>
@@ -152,6 +177,17 @@
     </script>
     <script>
         $("#ArchiveModel").on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var id = button.data('id')
+            var invoice_number = button.data('invoice_number')
+            var modal = $(this)
+            modal.find('.modal-body #id').val(id);
+            modal.find('.modal-body #invoice_number').val(invoice_number);
+        })
+
+    </script>
+    <script>
+        $("#DeleteModel").on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
             var invoice_number = button.data('invoice_number')

@@ -59,7 +59,7 @@ class InvoicesDetailsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function showDetails($id)
     {
        $invoices= Invoice::with(['details','attachment'])->where('id',$id)->first();
 

@@ -7,8 +7,11 @@ use App\Models\invoices_attachments;
 use App\Models\invoices_details;
 use App\Models\Product;
 use App\Models\Section;
+use App\Models\User;
+use App\Notifications\AddInvoice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
 
 class InvoiceController extends Controller
@@ -100,6 +103,10 @@ class InvoiceController extends Controller
             ]);
         }
 
+        //sending mail to admin during add new invoice
+        $user=User::first();
+        Notification::send($user,new AddInvoice($invoice_id));
+
         return  redirect('/invoices')->with('success-add-invoice','تم اضافه الفاتوره بنجاح');
     }
 
@@ -174,13 +181,7 @@ class InvoiceController extends Controller
 
     }
 
-    public function delete(Request $r)
-    {
-        Invoice::find($r->id)->forceDelete();
-        Storage::disk('invoices')->deleteDirectory($r->invoice_number);
-        return redirect()->back()->with('success-delete-invoice','تم حذف الفاتوة بنجاح');
 
-    }
 
    public function showStatus($id){
     $data=Invoice::find($id)->first();
@@ -224,5 +225,51 @@ public function updateStatus(Request $request){
     ]);
     return  redirect('/invoices')->with('success-update-invoice','تم تعديل حالة الفاتورة بنجاح');
 }
+    public function invoicePaid()
+    {
+        $invoices=Invoice::where('value_status',1)->get();
+        //
+        return view('invoices.show_invoices_paid',compact('invoices'));
+    }
+    public function invoiceUnpaid()
+    {
+        $invoices=Invoice::where('value_status',0)->get();
+        //
+        return view('invoices.show_invoices_unpaid',compact('invoices'));
+    }
+    public function invoicePartiallyPaid()
+    {
+        $invoices=Invoice::where('value_status',2)->get();
+        //
+        return view('invoices.show_invoices_partially',compact('invoices'));
+    }
+
+    public function invoiceArchive()
+    {
+        $invoices=Invoice::onlyTrashed()->get();
+        //
+        return view('invoices.show_invoices_archive',compact('invoices'));
+    }
+    public function delete(Request $r)
+    {
+        Invoice::withTrashed()->find($r->id)->forceDelete();
+        Storage::disk('invoices')->deleteDirectory($r->invoice_number);
+        return redirect()->back()->with('success-delete-invoice','تم حذف الفاتوة بنجاح');
+
+
+    }
+    public function restoreInvoice($id)
+    {
+        $invoices=Invoice::onlyTrashed()->where('id',$id)->first()->restore();
+
+        return redirect()->back()->with('success-restore-invoice','تم استرجاع الفاتورة بنجاح');
+    }
+    public function  printInvoice($id){
+        $invoices=Invoice::findOrFail($id)->first();
+
+        return view('invoices.print_invoice',compact('invoices'));
+    }
+
+
 }
 
