@@ -50,6 +50,8 @@ Route::middleware('admin')->group(function (){
     Route::get('invoice_archive',[InvoiceController::class,'invoiceArchive'])->name('invoiceArchive');
     Route::get('restore_invoice/{id}',[InvoiceController::class,'restoreInvoice'])->name('restoreInvoice');
     Route::get('print_invoice/{id}',[InvoiceController::class,'printInvoice'])->name('printInvoice');
+    Route::get('export', [InvoiceController::class,'export'])->name('exportInvoices');
+
 
 
 });

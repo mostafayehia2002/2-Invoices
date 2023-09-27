@@ -41,7 +41,9 @@
                     <div class="d-flex justify-content-between">
                         <div>
                             <a  href="{{url('invoices/create')}}" class="btn btn-outline-primary btn-block" data-effect="effect-scale" >اضافة فاتوره </a>
+                            <a href="{{route('exportInvoices')}}" class="btn btn-outline-primary btn-block" >طباعه الفواتير</a>
                         </div>
+
                      {{--                        --}}
                     </div>
                 </div>

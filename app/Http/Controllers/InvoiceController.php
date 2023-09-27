@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\InvoicesExport;
 use App\Models\Invoice;
 use App\Models\invoices_attachments;
 use App\Models\invoices_details;
@@ -13,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
 
 class InvoiceController extends Controller
 {
@@ -270,6 +272,10 @@ public function updateStatus(Request $request){
         return view('invoices.print_invoice',compact('invoices'));
     }
 
+    public function export()
+    {
+        return Excel::download(new InvoicesExport, 'invoice.xlsx');
+    }
 
 }
 
