@@ -24,20 +24,10 @@
 
 @section('content')
 
-@if (count($errors) > 0)
-<div class="alert alert-danger">
-    <button aria-label="Close" class="close" data-dismiss="alert" type="button">
-        <span aria-hidden="true">&times;</span>
-    </button>
-    <strong>خطا</strong>
-    <ul>
-        @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-</div>
-@endif
 
+        @foreach($errors->all() as $error)
+            <div class="alert alert-danger"> {{ $error }} </div>
+        @endforeach
 
 
 
@@ -61,7 +51,7 @@
                         <ul id="treeview1">
                             <li><a href="#">الصلاحيات</a>
                                 <ul>
-                            </li>
+                            <li>
                             @foreach($permission as $value)
                             <label
                                 style="font-size: 16px;">{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
@@ -72,6 +62,7 @@
 
                         </ul>
                         </li>
+
                         </ul>
                     </div>
                     <!-- /col -->
@@ -94,6 +85,14 @@
 {!! Form::close() !!}
 @endsection
 @section('js')
+    <script>
+        let alert=document.querySelectorAll('.alert');
+        alert.forEach((e)=>{
+            setTimeout(function (){
+                e.style.display='none';
+            },3000) ;
+        });
+    </script>
 <!-- Internal Treeview js -->
 <script src="{{URL::asset('assets/plugins/treeview/treeview.js')}}"></script>
 @endsection

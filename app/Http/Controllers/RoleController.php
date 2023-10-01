@@ -40,13 +40,13 @@ class RoleController extends Controller
 
     {
 
-        $this->middleware('permission:role-list|role-create|role-edit|role-delete', ['only' => ['index','store']]);
+        $this->middleware('permission:المستخدمين|صلاحيات المستخدمين',['only' => ['index','store']]);
 
-        $this->middleware('permission:role-create', ['only' => ['create','store']]);
+        $this->middleware('permission:اضافة صلاحية', ['only' => ['create','store']]);
 
-        $this->middleware('permission:role-edit', ['only' => ['edit','update']]);
+       $this->middleware('permission:تعديل صلاحية', ['only' => ['edit','update']]);
 
-        $this->middleware('permission:role-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:حذف صلاحية', ['only' => ['destroy']]);
 
     }
 
@@ -63,9 +63,7 @@ class RoleController extends Controller
      */
 
     public function index(Request $request): View
-
     {
-
         $roles = Role::orderBy('id','DESC')->paginate(5);
 
         return view('roles.index',compact('roles'))
@@ -89,11 +87,8 @@ class RoleController extends Controller
     public function create(): View
 
     {
-
         $permission = Permission::get();
-
         return view('roles.create',compact('permission'));
-
     }
 
 
@@ -120,19 +115,22 @@ class RoleController extends Controller
 
             'permission' => 'required',
 
+        ],[
+            'name.required'=>'يرجي ادخال الدور المستخدم',
+            'name.unique'=>'دور المستخدم موجود مسبقا',
+            'permission'=>'يرجي اختيار الصلاحية',
         ]);
 
 
-
-        $role = Role::create(['name' => $request->input('name')]);
-
-        $role->syncPermissions($request->input('permission'));
-
+         $role = Role::create(['name' => $request->input('name')]);
+//
+          $role->syncPermissions($request->input('permission'));
 
 
         return redirect()->route('roles.index')
 
-            ->with('success','Role created successfully');
+            ->with('success','تم انشاء الصلاحية بنجاح');
+
 
     }
 
@@ -155,11 +153,8 @@ class RoleController extends Controller
         $role = Role::find($id);
 
         $rolePermissions = Permission::join("role_has_permissions","role_has_permissions.permission_id","=","permissions.id")
-
             ->where("role_has_permissions.role_id",$id)
-
             ->get();
-
 
 
         return view('roles.show',compact('role','rolePermissions'));
@@ -226,6 +221,10 @@ class RoleController extends Controller
 
             'permission' => 'required',
 
+        ],[
+            'name.required'=>'يرجي ادخال الدور المستخدم',
+            'name.unique'=>'دور المستخدم موجود مسبقا',
+            'permission'=>'يرجي اختيار الصلاحية',
         ]);
 
 
@@ -244,7 +243,7 @@ class RoleController extends Controller
 
         return redirect()->route('roles.index')
 
-            ->with('success','Role updated successfully');
+            ->with('success','تم تعديل الدور بنجاح');
 
     }
 
@@ -268,7 +267,7 @@ class RoleController extends Controller
 
         return redirect()->route('roles.index')
 
-            ->with('success','Role deleted successfully');
+            ->with('success','تم اضافة الدور بنجاح');
 
     }
 

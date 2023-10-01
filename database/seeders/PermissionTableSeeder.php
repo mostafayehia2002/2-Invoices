@@ -29,57 +29,53 @@ class PermissionTableSeeder extends Seeder
     {
 
         $permissions = [
+            'قائمة الفواتير'=>'invoices.index',
+            'الفواتير المدفوعة'=>'invoicePaid',
+            'الفواتير المدفوعة جزئيا'=>'invoicePartiallyPaid',
+            'الفواتير الغير مدفوعة'=>'invoiceUnpaid',
+            'ارشيف الفواتير'=>'invoiceArchive',
+            'اضافة فاتورة'=>'invoices.create',
+            'حذف الفاتورة'=>'deleteInvoic',
+            'تصدير EXCEL'=>'exportInvoices',
+            'تغير حالة الدفع'=>'showStatus',
+            'تعديل الفاتورة'=>'invoices.edit',
+            'ارشفة الفاتورة'=>'archiveInvoice',
+            'استرجاع الفاتورة'=>'restoreInvoice',
+            'طباعةالفاتورة'=>'printInvoice',
+            'اضافة مرفق'=>'invoiceDetails.store',
+            'حذف المرفق'=>'deleteFile',
 
-            'الفواتير',
-            'قائمة الفواتير',
-            'الفواتير المدفوعة',
-            'الفواتير المدفوعة جزئيا',
-            'الفواتير الغير مدفوعة',
-            'ارشيف الفواتير',
-            'التقارير',
-            'تقرير الفواتير',
-            'تقرير العملاء',
-            'المستخدمين',
-            'قائمة المستخدمين',
-            'صلاحيات المستخدمين',
-            'الاعدادات',
-            'المنتجات',
-            'الاقسام',
 
+            'قائمة المستخدمين'=>'users.index',
+            'اضافة مستخدم'=>'users.create',
+            'تعديل مستخدم'=>'users.edit',
+            'حذف مستخدم'=>'deleteUser',
+            'صلاحيات المستخدمين'=>'roles.index',
+            'عرض صلاحية'=>'roles.show',
+            'اضافة صلاحية'=>'roles.create',
+            'تعديل صلاحية'=>'roles.edit',
+            'حذف صلاحية'=>'roles.destroy ',
 
-            'اضافة فاتورة',
-            'حذف الفاتورة',
-            'تصدير EXCEL',
-            'تغير حالة الدفع',
-            'تعديل الفاتورة',
-            'ارشفة الفاتورة',
-            'طباعةالفاتورة',
-            'اضافة مرفق',
-            'حذف المرفق',
+            'تقرير الفواتير'=>'null',
+            'تقرير العملاء'=>'null',
 
-            'اضافة مستخدم',
-            'تعديل مستخدم',
-            'حذف مستخدم',
-
-            'عرض صلاحية',
-            'اضافة صلاحية',
-            'تعديل صلاحية',
-            'حذف صلاحية',
-
-            'اضافة منتج',
-            'تعديل منتج',
-            'حذف منتج',
-
-            'اضافة قسم',
-            'تعديل قسم',
-            'حذف قسم',
-            'الاشعارات',
+            'الاقسام'=>'sections.index',
+            'اضافة قسم'=>'sections.sections',
+            'تعديل قسم'=>'sections.update',
+            'حذف قسم'=>'sections.destroy',
+            'المنتجات'=>'products.index',
+            'اضافة منتج'=>'products.store',
+            'تعديل منتج'=>'products.update',
+            'حذف منتج'=>'products.destroy',
 
         ];
 
-        foreach ($permissions as $permission) {
+        foreach ($permissions as $permission=>$route) {
 
-            Permission::create(['name' => $permission]);
+            Permission::create([
+                'name' => $permission,
+                'routes'=>$route,
+                ]);
 
         }
 

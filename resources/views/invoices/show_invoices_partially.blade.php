@@ -40,7 +40,9 @@
                 <div class="card-header pb-0">
                     <div class="d-flex justify-content-between">
                         <div>
-                            <a  href="{{url('invoices/create')}}" class="btn btn-outline-primary btn-block" data-effect="effect-scale" >اضافة فاتوره </a>
+                            @can('اضافة فاتورة')
+                                <a  href="{{url('invoices/create')}}" class="btn btn-outline-primary btn-block" data-effect="effect-scale" >اضافة فاتوره </a>
+                            @endcan
                         </div>
                      {{--                        --}}
                     </div>
@@ -85,17 +87,20 @@
                                     <div class="dropdown">
                                         <button aria-expanded="false" aria-haspopup="true" class="btn ripple btn-warning" data-toggle="dropdown" type="button">العمليات<i class="fas fa-caret-down mr-1"></i></button>
                                         <div class="dropdown-menu tx-13">
-                                            <a class="dropdown-item" href="{{route('invoices.edit',$invoice->id)}}">تعديل الفاتورة</a>
-
-                                             <a class="dropdown-item active" data-effect="effect-scale"
-                                               data-id="{{$invoice->id}}" data-invoice_number="{{$invoice->invoice_number}}"
-                                               data-toggle="modal" href="#ArchiveModel" title="حذف"> ارشفة الفاتورة</a>
-
-                                            <a class="dropdown-item" data-effect="effect-scale"
-                                               data-id="{{$invoice->id}}" data-invoice_number="{{$invoice->invoice_number}}"
-                                               data-toggle="modal" href="#DeleteModel" title="حذف"> حذف الفاتورة</a>
-
-                                            <a class="dropdown-item" href="{{route('showStatus',$invoice->id)}}" title="تغيير حالة الدفع"> تغيير حالة الدفع</a>
+                                            @can('تعديل الفاتورة')
+                                                <a class="dropdown-item" href="{{route('invoices.edit',$invoice->id)}}">تعديل الفاتورة</a>
+                                            @endcan
+                                            @can('ارشفة الفاتورة')
+                                                <a class="dropdown-item active" data-effect="effect-scale"
+                                                   data-id="{{$invoice->id}}" data-invoice_number="{{$invoice->invoice_number}}"
+                                                   data-toggle="modal" href="#ArchiveModel" title="حذف"> ارشفة الفاتورة</a>
+                                            @endcan
+                                            @can('تغير حالة الدفع')
+                                                <a class="dropdown-item" href="{{route('showStatus',$invoice->id)}}" title="تغيير حالة الدفع"> تغيير حالة الدفع</a>
+                                            @endcan
+                                            @can('طباعةالفاتورة')
+                                                <a class="dropdown-item" href="{{route('printInvoice',$invoice->id)}}" title="طباعة الفاتورة"> طباعة الفاتورة</a>
+                                            @endcan
                                         </div>
 
 

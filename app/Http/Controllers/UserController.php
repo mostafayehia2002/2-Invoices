@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\User;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Arr;
@@ -21,7 +22,18 @@ use Illuminate\Http\RedirectResponse;
 class UserController extends Controller
 
 {
+    function __construct()
+    {
 
+        $this->middleware('permission:المستخدمين|قائمة المستخدمين',['only' => ['index','store']]);
+
+        $this->middleware('permission:اضافة مستخدم', ['only' => ['create','store']]);
+
+         $this->middleware('permission:تعديل مستخدم', ['only' => ['edit','update']]);
+
+          $this->middleware('permission:حذف مستخدم', ['only' => ['delete']]);
+
+    }
     /**
 
      * Display a listing of the resource.
@@ -84,6 +96,14 @@ class UserController extends Controller
              'password' => 'required|same:confirm-password',
              'roles' => 'required',
              'status'=>'required',
+         ],[
+             'name.required' => 'يرجي ادخال اسم المستخدم',
+             'email.required' => 'يرجي ادخال الايميل',
+             'email.unique' => 'هذا الايميل موجود من قبل',
+             'password.required' => 'يرجي ادخال كلمه المرور',
+             'password.same'=>'كلمه المرور يجب ان تطابق تاكيد كلمه المرور',
+             'roles.required' => 'يرجي اختيار دور المستخدم',
+             'status.required'=>'يرجي ادخال حالة المستخدم',
          ]);
 
         $input = $request->all();
@@ -119,7 +139,6 @@ class UserController extends Controller
     {
 
         $user = User::find($id);
-
         return view('users.show',compact('user'));
 
     }
@@ -143,13 +162,9 @@ class UserController extends Controller
     {
 
         $user = User::find($id);
-
         $roles = Role::pluck('name','name')->all();
 
         $userRole = $user->roles->pluck('name','name')->all();
-
-
-
         return view('users.edit',compact('user','roles','userRole'));
 
     }
@@ -177,13 +192,18 @@ class UserController extends Controller
         $this->validate($request, [
 
             'name' => 'required',
-
             'email' => 'required|email|unique:users,email,'.$id,
-
             'password' => 'same:confirm-password',
-
             'roles' => 'required'
 
+        ],[
+            'name.required' => 'يرجي ادخال اسم المستخدم',
+            'email.required' => 'يرجي ادخال الايميل',
+            'email.unique' => 'هذا الايميل موجود من قبل',
+            'password.required' => 'يرجي ادخال كلمه المرور',
+            'password.same'=>'كلمه المرور يجب ان تطابق تاكيد كلمه المرور',
+            'roles.required' => 'يرجي اختيار دور المستخدم',
+            'status.required'=>'يرجي ادخال حالة المستخدم',
         ]);
 
 
@@ -208,15 +228,12 @@ class UserController extends Controller
 
         DB::table('model_has_roles')->where('model_id',$id)->delete();
 
-
-
         $user->assignRole($request->input('roles'));
-
 
 
         return redirect()->route('users.index')
 
-            ->with('success','User updated successfully');
+            ->with('success','تم تعديل المستخدم بنجاح');
 
     }
 
@@ -234,15 +251,14 @@ class UserController extends Controller
 
      */
 
-    public function destroy($id): RedirectResponse
+    public function delete(Request $r): RedirectResponse
 
     {
-
+        $id=$r->user_id;
         User::find($id)->delete();
-
         return redirect()->route('users.index')
 
-            ->with('success','User deleted successfully');
+            ->with('success','تم حذف المستخدم بنجاح');
 
     }
 

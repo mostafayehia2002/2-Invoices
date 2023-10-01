@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('css')
 <!-- Internal Nice-select css  -->
-<link href="{{URL::asset('assets/plugins/jquery-nice-select/css/nice-select.css')}}" rel="stylesheet" />
+<link  href={{URL::asset('assets/plugins/jquery-nice-select/css/nice-select.css')}}  rel="stylesheet" />
 @section('title')
 اضافة مستخدم
 @stop
@@ -20,25 +20,17 @@
 </div>
 <!-- breadcrumb -->
 @endsection
+
 @section('content')
 <!-- row -->
 <div class="row">
-
-
     <div class="col-lg-12 col-md-12">
-
-        @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <button aria-label="Close" class="close" data-dismiss="alert" type="button">
-                <span aria-hidden="true">&times;</span>
-            </button>
 
                 @foreach ($errors->all() as $error)
                     <div class="alert alert-danger">{{ $error }}</div>
                 @endforeach
 
-        </div>
-        @endif
+
 
         <div class="card">
             <div class="card-body">
@@ -48,7 +40,7 @@
                     </div>
                 </div><br>
                 <form class="parsley-style-1" id="selectForm2" autocomplete="off" name="selectForm2"
-                    action="{{route('users.store','test')}}" method="post">
+                    action="{{route('users.store')}}" method="post">
                     {{csrf_field()}}
 
                     <div class="">
@@ -99,7 +91,7 @@
                                 <label class="form-label"> صلاحية المستخدم</label>
                                <select  class="form-control nice-select  custom-select" name="roles" multiple>
                                    @foreach($roles as $role)
-                                       <option value="{{$role}}">{{$role}}</option>
+                                       <option value="{{$role}}"> {{$role}}</option>
                                    @endforeach
 
                                </select>
@@ -123,7 +115,14 @@
 @endsection
 @section('js')
 
-
+    <script>
+        let alert=document.querySelectorAll('.alert');
+        alert.forEach((e)=>{
+            setTimeout(function (){
+                e.style.display='none';
+            },3000) ;
+        });
+    </script>
 <!-- Internal Nice-select js-->
 <script src="{{URL::asset('assets/plugins/jquery-nice-select/js/jquery.nice-select.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/jquery-nice-select/js/nice-select.js')}}"></script>

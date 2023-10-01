@@ -246,6 +246,7 @@ public function updateStatus(Request $request){
         return view('invoices.show_invoices_partially',compact('invoices'));
     }
 
+
     public function invoiceArchive()
     {
         $invoices=Invoice::onlyTrashed()->get();

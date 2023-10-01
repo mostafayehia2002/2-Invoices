@@ -64,6 +64,14 @@
 <!-- main-content closed -->
 @endsection
 @section('js')
+    <script>
+        let alert=document.querySelectorAll('.alert');
+        alert.forEach((e)=>{
+            setTimeout(function (){
+                e.style.display='none';
+            },3000) ;
+        });
+    </script>
 <script src="{{URL::asset('assets/plugins/treeview/treeview.js')}}"></script>
 
 @endsection

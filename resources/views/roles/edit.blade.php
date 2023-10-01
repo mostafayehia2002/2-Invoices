@@ -22,19 +22,14 @@
 @endsection
 @section('content')
 
-@if (count($errors) > 0)
-<div class="alert alert-danger">
-    <button aria-label="Close" class="close" data-dismiss="alert" type="button">
-        <span aria-hidden="true">&times;</span>
-    </button>
-    <strong>خطا</strong>
-    <ul>
+
         @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
+
+            <div class="alert alert-danger">{{$error}} </div>
+
         @endforeach
-    </ul>
-</div>
-@endif
+
+
 
 
 {!! Form::model($role, ['method' => 'PATCH','route' => ['roles.update', $role->id]]) !!}
@@ -84,6 +79,14 @@
 {!! Form::close() !!}
 @endsection
 @section('js')
+    <script>
+        let alert=document.querySelectorAll('.alert');
+        alert.forEach((e)=>{
+            setTimeout(function (){
+                e.style.display='none';
+            },3000) ;
+        });
+    </script>
 <!-- Internal Treeview js -->
 <script src="{{URL::asset('assets/plugins/treeview/treeview.js')}}"></script>
 @endsection
