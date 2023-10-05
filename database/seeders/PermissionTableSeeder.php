@@ -56,8 +56,8 @@ class PermissionTableSeeder extends Seeder
             'تعديل صلاحية'=>'roles.edit',
             'حذف صلاحية'=>'roles.destroy ',
 
-            'تقرير الفواتير'=>'null',
-            'تقرير العملاء'=>'null',
+            'تقرير الفواتير'=>'invoiceReport',
+            'تقرير العملاء'=>'customerReport',
 
             'الاقسام'=>'sections.index',
             'اضافة قسم'=>'sections.sections',

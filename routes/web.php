@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\InvoicesDetailsController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\UserController;
@@ -60,8 +61,12 @@ Route::middleware(['admin','checkPermission'])->group(function (){
         Route::post('delete_user',[UserController::class,'delete'])->name('deleteUser');
 
 
+        Route::get('invoice_reports',[ReportController::class,'index'])->name('invoiceReport');
+        Route::Post('invoice_reports/result',[ReportController::class,'searchInvoice'])->name('invoiceReportResult');
 
+        Route::get('customer_report',[ReportController::class,'showCustomer'])->name('customerReport');
 
+    Route::Post('customers_reports/result',[ReportController::class,'searchCustomer'])->name('customerReportResult');
 
 });
 
